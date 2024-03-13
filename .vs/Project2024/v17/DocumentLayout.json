@@ -1,0 +1,162 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\sqlserver\\routesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:sqlserver\\routesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\views\\routecreationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:views\\routecreationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\views\\routecreationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:views\\routecreationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\views\\createorjoinpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:views\\createorjoinpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\localbase\\userroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:localbase\\userroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\views\\createorjoinpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:views\\createorjoinpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|c:\\users\\38067\\onedrive\\desktop\\project2024\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A58D89B7-924D-4C4A-B962-12D5302EEE0E}|Project2024.csproj|solutionrelative:views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoutesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\SqlServer\\RoutesRepository.cs",
+              "RelativeDocumentMoniker": "SqlServer\\RoutesRepository.cs",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\SqlServer\\RoutesRepository.cs",
+              "RelativeToolTip": "SqlServer\\RoutesRepository.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T15:01:01.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateOrJoinPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\CreateOrJoinPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\CreateOrJoinPage.xaml.cs",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\CreateOrJoinPage.xaml.cs",
+              "RelativeToolTip": "Views\\CreateOrJoinPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T15:00:22.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateOrJoinPage.xaml",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\CreateOrJoinPage.xaml",
+              "RelativeDocumentMoniker": "Views\\CreateOrJoinPage.xaml",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\CreateOrJoinPage.xaml",
+              "RelativeToolTip": "Views\\CreateOrJoinPage.xaml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACEAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-12T14:56:26.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\MainPage.xaml.cs",
+              "RelativeToolTip": "Views\\MainPage.xaml.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T16:26:31.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Views\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\MainPage.xaml",
+              "RelativeToolTip": "Views\\MainPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-11T16:09:48.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RouteCreationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\RouteCreationPage.xaml",
+              "RelativeDocumentMoniker": "Views\\RouteCreationPage.xaml",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\RouteCreationPage.xaml",
+              "RelativeToolTip": "Views\\RouteCreationPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-09T11:53:27.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RouteCreationPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\RouteCreationPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\RouteCreationPage.xaml.cs",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\Views\\RouteCreationPage.xaml.cs",
+              "RelativeToolTip": "Views\\RouteCreationPage.xaml.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAYwDoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-09T12:26:23.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRoute.cs",
+              "DocumentMoniker": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\LocalBase\\UserRoute.cs",
+              "RelativeDocumentMoniker": "LocalBase\\UserRoute.cs",
+              "ToolTip": "C:\\Users\\38067\\OneDrive\\Desktop\\Project2024\\LocalBase\\UserRoute.cs",
+              "RelativeToolTip": "LocalBase\\UserRoute.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCgAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-08T15:44:41.396Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

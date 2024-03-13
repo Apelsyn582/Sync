@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project2024.Views.RouteCreationPage"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             Shell.NavBarIsVisible="False">
+
+    <Grid Padding="1"
+          RowDefinitions="20, *, 40">
+
+        <Label Grid.Row="0" x:Name="LblNotice" Text="Оберіть початок маршруту"/>
+
+        <Map Grid.Row="1" x:Name="map" MapClicked="Map_MapClicked"  MapType="Street"  IsShowingUser="True" IsTrafficEnabled="true" >
+        <x:Arguments>
+            <MapSpan>
+                <x:Arguments>
+                    <sensors:Location>
+                        <x:Arguments>
+                            <x:Double>49.847407</x:Double>
+                            <x:Double>24.027073</x:Double>
+                        </x:Arguments>
+                    </sensors:Location>
+                    <x:Double>0.025</x:Double>
+                    <x:Double>0.025</x:Double>
+                </x:Arguments>
+            </MapSpan>
+        </x:Arguments>
+    </Map>
+        <Button Grid.Row="2" x:Name="BtnSave" Clicked="BtnSave_Clicked" Text="Зберегти" WidthRequest="190" HorizontalOptions="Start"/>
+
+        <Button Grid.Row="2" x:Name="BtnDeletePin" Text="Видалити мітку" Clicked="BtnDeletePin_Clicked" WidthRequest="190" HorizontalOptions="End" />
+    </Grid>
+</ContentPage>

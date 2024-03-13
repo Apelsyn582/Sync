@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+	x:Class="Project2024.AppShell"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:views="clr-namespace:Project2024.Views"
+	xmlns:local="clr-namespace:Project2024">
+
+    <ShellContent
+		Title="LoadingPage"
+		ContentTemplate="{DataTemplate views:LoadingPage}"
+		Route="///LoadingPage" />
+
+
+    <ShellContent
+	Shell.FlyoutBehavior="Disabled"
+	ContentTemplate="{DataTemplate views:LogInPage}"
+	Route="LogInPage"
+	/>
+
+    <ShellContent
+		Shell.FlyoutBehavior="Disabled"
+		ContentTemplate="{DataTemplate views:MainPage}"
+		Route="MainPage"
+		/>
+
+</Shell>
