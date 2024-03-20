@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project2024.SqlServer
 {
-    public class Pin
+    public class _Pin
     {  
        public double Latitude { get; set; } = 0;
        public double Longitude { get; set; } = 0;

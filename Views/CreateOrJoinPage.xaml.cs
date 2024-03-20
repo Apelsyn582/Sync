@@ -1,34 +1,58 @@
+using Microsoft.Maui.Controls.Maps;
 using Project2024.LocalBase;
 using Project2024.SqlServer;
+using System.Net;
 
 namespace Project2024.Views;
 
 public partial class CreateOrJoinPage : ContentPage
 {
     private readonly Route route;
-
-    private readonly RoutesRepository routesRepository;
-
     public CreateOrJoinPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
         route = new()
         {
             StartPin = UserRoute.GetStartPin(),
             EndPin = UserRoute.GetEndPin(),
+            Time = UserRoute.GetTime(),
+            Owner = UserRoute.GetOwner()
         };
 
-        routesRepository = new RoutesRepository();
+        Pin pin1 = new()
+        {
+            Label = "Початок маршруту",
+            Type = PinType.Place,
+            Location = new Location(route.StartPin.Latitude, route.StartPin.Longitude)
+        };
+
+        Pin pin2 = new()
+        {
+            Label = "Кінець маршруту",
+            Type = PinType.Place,
+            Location = new Location(route.EndPin.Latitude, route.EndPin.Longitude)
+        };
+
+        map.Pins.Add(pin1);
+        map.Pins.Add(pin2);
     }
+
+    
 
     private void BtnJoinToRoute_Clicked(object sender, EventArgs e)
     {
-        //логіка-пошук спільних маршрутів
+        Shell.Current.GoToAsync(nameof(SimilarRoutesPage));
     }
 
     private void BtnCreateRoute_Clicked(object sender, EventArgs e)
     {
-        routesRepository.AddRoute(route);
+        
+
+        RoutesRepository.AddRoute(route);
+
+        DisplayAlert("Маршрут додано", "Щоб переглянути маршрут відкрийте меню", "OK");
+
+        Shell.Current.GoToAsync($"//{nameof(MainPage)}");
     }
 }

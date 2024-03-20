@@ -8,6 +8,8 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 
+
+
 	}
 
     private void BtnFrom_Clicked(object sender, EventArgs e)

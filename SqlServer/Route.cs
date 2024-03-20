@@ -8,8 +8,12 @@ namespace Project2024.SqlServer
 {
     public class Route
     {
-        public required Pin StartPin { get; set; }
+        public required _Pin StartPin { get; set; }
 
-        public required Pin EndPin { get; set; }
+        public required _Pin EndPin { get; set; }
+
+        public required string Time { get; set; }
+
+        public required User Owner { get; set; }
     }
 }

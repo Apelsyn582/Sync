@@ -4,30 +4,34 @@
              x:Class="Project2024.Views.RouteCreationPage"
              xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
              Shell.NavBarIsVisible="False">
-
     <Grid Padding="1"
-          RowDefinitions="20, *, 40">
+          RowDefinitions="40, 20, *, 40, 30">
 
-        <Label Grid.Row="0" x:Name="LblNotice" Text="Оберіть початок маршруту"/>
+        <ImageButton Grid.Row="0" x:Name="BtnDelete" Clicked="BtnDelete_Clicked" Source="back.png" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="40" WidthRequest="112"/>
 
-        <Map Grid.Row="1" x:Name="map" MapClicked="Map_MapClicked"  MapType="Street"  IsShowingUser="True" IsTrafficEnabled="true" >
-        <x:Arguments>
-            <MapSpan>
-                <x:Arguments>
-                    <sensors:Location>
-                        <x:Arguments>
-                            <x:Double>49.847407</x:Double>
-                            <x:Double>24.027073</x:Double>
-                        </x:Arguments>
-                    </sensors:Location>
-                    <x:Double>0.025</x:Double>
-                    <x:Double>0.025</x:Double>
-                </x:Arguments>
-            </MapSpan>
-        </x:Arguments>
-    </Map>
-        <Button Grid.Row="2" x:Name="BtnSave" Clicked="BtnSave_Clicked" Text="Зберегти" WidthRequest="190" HorizontalOptions="Start"/>
+        <Label Grid.Row="1" x:Name="LblNotice" Text="Оберіть початок маршруту"/>
 
-        <Button Grid.Row="2" x:Name="BtnDeletePin" Text="Видалити мітку" Clicked="BtnDeletePin_Clicked" WidthRequest="190" HorizontalOptions="End" />
+        <Map Grid.Row="2" x:Name="map" MapClicked="Map_MapClicked"  MapType="Street"  IsShowingUser="True" IsTrafficEnabled="true" >
+            <x:Arguments>
+                <MapSpan>
+                    <x:Arguments>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>49.847407</x:Double>
+                                <x:Double>24.027073</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                        <x:Double>0.025</x:Double>
+                        <x:Double>0.025</x:Double>
+                    </x:Arguments>
+                </MapSpan>
+            </x:Arguments>
+        </Map>
+
+        <Button Grid.Row="3" x:Name="BtnSave" Clicked="BtnSave_Clicked" Text="Зберегти" WidthRequest="190" HorizontalOptions="Start"/>
+
+        <Button Grid.Row="3" x:Name="BtnDeletePin" Text="Видалити мітку" Clicked="BtnDeletePin_Clicked" WidthRequest="190" HorizontalOptions="End" />
+
+        <Entry Grid.Row="4" x:Name="TimeEntry" HeightRequest="40" WidthRequest="200" VerticalOptions="Center"  Text="Введіть час поїздки"/>
     </Grid>
 </ContentPage>

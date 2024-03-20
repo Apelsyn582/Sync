@@ -8,10 +8,10 @@ namespace Project2024.SqlServer
 {
     public class User
     {
-        public required string Name { get; set; }
+        public string Name { get; set; } = "User";
 
-        public required string Phone { get; set; }
+        public string Phone { get; set; } = "+380000000000";
 
-       public required string Password {  get; set; } 
+       public string Password { get; set; } = "????????";
     }
 }

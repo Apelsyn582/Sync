@@ -1,6 +1,6 @@
-
 using Microsoft.Maui.Controls.Maps;
 using Project2024.LocalBase;
+
 
 
 namespace Project2024.Views;
@@ -16,8 +16,14 @@ public partial class RouteCreationPage : ContentPage
     public double EndLongitude = 0;
 
     public int PinCount = 0;
+
+    public string Time
+    {
+        get { return TimeEntry.Text; }
+        set { TimeEntry.Text = value; }
+    }
     public RouteCreationPage()
-	{
+    {
         InitializeComponent();
     }
 
@@ -25,7 +31,7 @@ public partial class RouteCreationPage : ContentPage
     {
         PinCount++;
 
-        if (PinCount == 1) 
+        if (PinCount == 1)
         {
             StartLatitude = e.Location.Latitude;
 
@@ -41,7 +47,7 @@ public partial class RouteCreationPage : ContentPage
             map.Pins.Add(FirstPin);
 
             LblNotice.Text = $"Оберіть кінець маршруту";
- 
+
         }
         else if (PinCount == 2)
         {
@@ -90,7 +96,23 @@ public partial class RouteCreationPage : ContentPage
         UserRoute.SetStartPin(StartLatitude, StartLongitude);
 
         UserRoute.SetEndPin(EndLatitude, EndLongitude);
+
+        if (Time[2] == ':' && Time.Length == 5)
+        {
+            UserRoute.SetTime(Time);
+        }
+        else
+        {
+            DisplayAlert("Помилка", "Поле час є обов'язковим", "OK");
+        }
+
+        //коли буде логування зробити SetOwner()
+
+        Shell.Current.GoToAsync(nameof(CreateOrJoinPage));
     }
 
-    
+    private void BtnDelete_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+    }
 }

@@ -21,6 +21,9 @@ public static class MauiProgram
         builder.Services.AddTransient<AuthService>();
         builder.Services.AddTransient<LogInPage>();
         builder.Services.AddTransient<RouteCreationPage>();
+        builder.Services.AddTransient<CreateOrJoinPage>();
+        builder.Services.AddTransient<SimilarRoutesPage>();
+
 
         return builder.Build();
 	}

@@ -7,7 +7,7 @@
     <Grid Padding="1"
           RowDefinitions="*, 273">
 
-        <Map Grid.Row="0" x:Name="map" MapType="Street"  IsShowingUser="True" IsTrafficEnabled="true" >
+        <Map Grid.Row="0" x:Name="map" MapType="Street"  IsShowingUser="True"  >
             <x:Arguments>
                 <MapSpan>
                     <x:Arguments>
@@ -17,8 +17,8 @@
                                 <x:Double>24.027073</x:Double>
                             </x:Arguments>
                         </sensors:Location>
-                        <x:Double>0.025</x:Double>
-                        <x:Double>0.025</x:Double>
+                        <x:Double>0.035</x:Double>
+                        <x:Double>0.035</x:Double>
                     </x:Arguments>
                 </MapSpan>
             </x:Arguments>
@@ -26,29 +26,29 @@
 
         <Frame Grid.Row="1" >
             <Grid Padding="0"
-                RowDefinitions=" 120, 80, 26, 16">
+                    RowDefinitions=" 120, 80, 26, 16">
 
                 <ImageButton
-                  Grid.Row="0"
-                  x:Name="BtnCreateRoute"
-                  Clicked="BtnCreateRoute_Clicked"
-                  Source="from.png"
-                  VerticalOptions="Center"
-                  HorizontalOptions="End"
-                  HeightRequest="70"
-                  WidthRequest="350"
-                  BorderColor="#000000"/>
+                    Grid.Row="0"
+                    x:Name="BtnJoinToRoute"
+                    Source="join_to_route.png"
+                    Clicked="BtnJoinToRoute_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    HeightRequest="70"
+                    WidthRequest="350"
+                    BorderColor="#000000"/>
 
                 <ImageButton
-                  Grid.Row="1"
-                  x:Name="BtnJoinToRoute"
-                  Clicked="BtnJoinToRoute_Clicked"
-                  Source="to.png"
-                  VerticalOptions="Center"
-                  HorizontalOptions="Start"
-                  HeightRequest="70"
-                  WidthRequest="350"
-                  BorderColor="#000000"/>
+                    Grid.Row="1"
+                    x:Name="BtnCreateRoute"
+                    Source="create_route.png"
+                    Clicked="BtnCreateRoute_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    HeightRequest="70"
+                    WidthRequest="350"
+                    BorderColor="#000000"/>
 
 
 
