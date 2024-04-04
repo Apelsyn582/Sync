@@ -1,0 +1,61 @@
+# Build/compiled files
+*.apk
+*.ap_
+*.aab
+*.dylib
+*.pdb
+*.dll
+*.exe
+*.log
+*.so
+*.ipa
+*.xcarchive
+*.xcuserdata
+*.swp
+*.suo
+*.cache
+*.ds_store
+
+# Dependency directories
+/packages/
+/packages-lock.json
+/.NET/*
+!/.NET/NuGet/*
+!/.NET/NuGet/**/*
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.sln.ide
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+*.scc
+
+# Resharper files
+_ReSharper*/
+*.resharper
+*.DotSettings.user
+
+# Rider files
+.idea/
+*.sln.iml
+*.ide
+
+# Build directories
+bin/
+obj/
+
+# Other
+[Tt]humbs.db
+*.bak
+*.bak.*
+*.log
+*.cache
+*.log*
