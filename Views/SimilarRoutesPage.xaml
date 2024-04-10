@@ -27,14 +27,14 @@
                             <StackLayout Orientation="Horizontal" Spacing="10">
                                 <Label Text=" "  VerticalOptions="Center" />
                                 <Image HeightRequest="48" WidthRequest="28" VerticalOptions="Center" Source="user.png" />
-                                <StackLayout Spacing="5">
-                                    <Label Text="{Binding Owner.Name}" TextColor="White" VerticalOptions="Center"/>
-                                    <Label Text="{Binding Owner.Phone}" TextColor="White" VerticalOptions="Center"/>
+                                <Label Text=" "  VerticalOptions="Center" />
+                                <StackLayout Spacing="0">
+                                    <Label Text="{Binding Owner.Name}" FontSize="18" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Owner.Phone}" FontSize="13" FontAttributes="Bold" TextColor="White" VerticalOptions="Center"/>
                                 </StackLayout>
-                                <Label Text="   "  VerticalOptions="Center" />
-                                <Label Text="час:" TextColor="White" VerticalOptions="Center" />
-                                <Label Text="{Binding Time}" TextColor="White" VerticalOptions="Center" />
-                                <Label Text="             "  VerticalOptions="Center" />
+                                <Label Text="            "  VerticalOptions="Center" />
+                                <Label Text="час:" FontSize="18" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                                <Label Text="{Binding Time}" FontAttributes="Bold" FontSize="18" TextColor="White" VerticalOptions="Center" />
                                 <Image Source="arrow.png" WidthRequest="14" HeightRequest="22" VerticalOptions="Center" HorizontalOptions="Center"/>
 
 

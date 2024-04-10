@@ -46,33 +46,38 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
 	  <None Remove="Resources\Images\arrow.png" />
 	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\burger.jpg" />
 	  <None Remove="Resources\Images\create_route.png" />
-	  <None Remove="Resources\Images\from.png" />
-	  <None Remove="Resources\Images\from_label.png" />
+	  <None Remove="Resources\Images\delete_pin.png" />
 	  <None Remove="Resources\Images\join_to_route.png" />
+	  <None Remove="Resources\Images\line.png" />
+	  <None Remove="Resources\Images\save_personal_information.png" />
+	  <None Remove="Resources\Images\save_route.png" />
+	  <None Remove="Resources\Images\sign_in.png" />
+	  <None Remove="Resources\Images\sign_up.png" />
+	  <None Remove="Resources\Images\start.png" />
 	  <None Remove="Resources\Images\strilka.png" />
-	  <None Remove="Resources\Images\to.png" />
 	  <None Remove="Resources\Images\user.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.101" />
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	  <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.8" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\CreateOrJoinPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\LoadingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LogInPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\RouteCreationPage.xaml">
+	  <MauiXaml Update="Views\PersonalDatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SimilarRoutesPage.xaml">

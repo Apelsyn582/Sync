@@ -12,17 +12,16 @@ public static class MauiProgram
 			.UseMauiMaps()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+				fonts.AddFont("Montserrat-Regular.ttf", "MontserratRegular");
+				fonts.AddFont("Montserrat-Semibold.ttf", "MontserratSemibold");
 			});
 
 		builder.Services.AddTransient<MainPage>();
         builder.Services.AddSingleton<LoadingPage> ();
         builder.Services.AddTransient<AuthService>();
         builder.Services.AddTransient<LogInPage>();
-        builder.Services.AddTransient<RouteCreationPage>();
-        builder.Services.AddTransient<CreateOrJoinPage>();
         builder.Services.AddTransient<SimilarRoutesPage>();
+        builder.Services.AddTransient<PersonalDatePage>();
 
 
         return builder.Build();

@@ -1,5 +1,5 @@
 using Project2024.LocalBase;
-using Project2024.SqlServer;
+using Project2024.Server;
 
 namespace Project2024.Views;
 
