@@ -1,4 +1,4 @@
-﻿using Project2024.SqlServer;
+﻿using Project2024.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,8 @@ namespace Project2024.LocalBase
     {
         private readonly static Route route = new()
         {
-            StartPin = new _Pin(),
-            EndPin = new _Pin(),
+            StartPin = new _Pin(0,0),
+            EndPin = new _Pin(0,0),
             Time = "99:99",
             Owner = new User()
         };
@@ -64,9 +64,14 @@ namespace Project2024.LocalBase
             }
         }
 
-        public static void SetOwner()
+        public static void SetOwner(User user)
         {
+            route.Owner = user;
+        }
 
+        public static void AddName(string name)
+        {
+            route.Owner.Name = name;
         }
     }
 }

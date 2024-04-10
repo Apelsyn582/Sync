@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project2024.SqlServer
+namespace Project2024.Server
 {
     public static class RoutesRepository
     {
@@ -14,10 +14,17 @@ namespace Project2024.SqlServer
         {
             new()
             {
-                StartPin = new _Pin(),
-                EndPin = UserRoute.GetEndPin(),
-                Time = UserRoute.GetTime(),
+                StartPin = new(49.836910, 24.001949),
+                EndPin = new(49.864880, 24.053089),
+                Time = "14:15",
                 Owner = new() { Name = "Іван", Phone = "+380676680971", Password = "1234" }
+            },
+            new()
+            {
+                StartPin = new(49.898910, 24.881949),
+                EndPin = new(49.877880, 24.053089),
+                Time = "14:15",
+                Owner = new() { Name = "Степан", Phone = "+380676680971", Password = "1234" }
             },
         };
 
@@ -29,10 +36,14 @@ namespace Project2024.SqlServer
 
             };
 
+
+
             foreach (var route in routes)
             {
 
-                if (Location.CalculateDistance(new Location(route.StartPin.Latitude, route.StartPin.Longitude), StartLocation, DistanceUnits.Miles) < 200 && Location.CalculateDistance(new Location(route.EndPin.Latitude, route.EndPin.Longitude), EndLocation, DistanceUnits.Miles) < 200)
+                var a = Location.CalculateDistance(new Location(route.StartPin.Latitude, route.StartPin.Longitude), StartLocation, DistanceUnits.Miles);
+
+                if (a < 0.1864 && Location.CalculateDistance(new Location(route.EndPin.Latitude, route.EndPin.Longitude), EndLocation, DistanceUnits.Miles) < 0.1864)
                 {
                     _routes.Add(route);
                 }

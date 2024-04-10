@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project2024.Views.PersonalDatePage"
+             Shell.NavBarIsVisible="False">
+    <VerticalStackLayout Spacing="20">
+
+        <ImageButton
+                     x:Name="BtnDelete"
+                     Clicked="BtnDelete_Clicked"
+                     Source="back.png" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="40" WidthRequest="112"/>
+
+        <Frame CornerRadius="20" HeightRequest="70" WidthRequest="360" BackgroundColor="#E9E9E9" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label   Text="Особисті дані" FontSize="24" FontAttributes="Bold" TextColor="DarkBlue" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Frame>
+
+        <Frame   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="58" WidthRequest="380" BackgroundColor="#F3F3F3" CornerRadius="10" Padding="5">
+            <Entry
+                x:Name="NameEntry"
+                Text="{Binding Name}"
+                Placeholder="ВВЕДІТЬ ІМ'Я"
+                ReturnType="Done"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                PlaceholderColor="Grey"
+                FontSize="20"/>
+        </Frame>
+
+        <Frame   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="58" WidthRequest="380" BackgroundColor="#F3F3F3" CornerRadius="10" Padding="5">
+            <Entry
+        x:Name="SexEntry"
+        Placeholder="ВВЕДІТЬ CТАТЬ"
+        ReturnType="Done"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        TextColor="Black"
+        PlaceholderColor="Grey"
+        FontSize="20"/>
+        </Frame>
+
+        <Frame   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="58" WidthRequest="380" BackgroundColor="#F3F3F3" CornerRadius="10" Padding="5">
+            <Entry 
+        x:Name="PhoneEntry"
+        Text="{Binding Phone}"
+        Placeholder="НОМЕР ТЕЛЕФОНУ"
+        ReturnType="Done"
+        Keyboard="Numeric"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        TextColor="Black"
+        PlaceholderColor="Grey"
+        FontSize="20"/>
+        </Frame>
+
+        <Frame   VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="58" WidthRequest="380" BackgroundColor="#F3F3F3" CornerRadius="10" Padding="5">
+            <Entry
+        x:Name="EmailEntry"
+        Placeholder="ВВЕДІТЬ ЕЛЕКТРОННУ АДРЕСУ"
+        ReturnType="Done"
+        Keyboard="Email"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        TextColor="Black"
+        PlaceholderColor="Grey"
+        FontSize="20"/>
+        </Frame>
+
+        <ImageButton x:Name="BtnSave" Clicked="BtnSave_Clicked"
+                     Source="save_personal_information.png" 
+                     HeightRequest="60" WidthRequest="330"
+                     VerticalOptions="Center" HorizontalOptions="Center"
+                     />
+
+    </VerticalStackLayout>
+</ContentPage>

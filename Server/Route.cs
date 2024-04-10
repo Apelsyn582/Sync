@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project2024.SqlServer
+namespace Project2024.Server
 {
     public class Route
     {

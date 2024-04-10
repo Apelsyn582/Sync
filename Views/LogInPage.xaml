@@ -4,8 +4,61 @@
              x:Class="Project2024.Views.LogInPage"
              Shell.NavBarIsVisible="False">
 
-    <VerticalStackLayout>
-        <Button x:Name="BtnLogIn" Clicked="BtnLogIn_Clicked"  Text="Log in" HeightRequest="34" VerticalOptions="CenterAndExpand"></Button>
-    </VerticalStackLayout>
+    <Grid Padding="10"
+    RowDefinitions="*, 60, 70, 70, 60">
+
+        <Label Grid.Row="1" Text="  Вітаємо!" FontSize="36" HorizontalOptions="Start" VerticalOptions="Start"></Label>
+
+        <Frame Grid.Row="2" HeightRequest="57" WidthRequest="350" BorderColor="#D9D9D9"  CornerRadius="20" Padding="5">
+            <Entry
+                x:Name="PhoneEntry"
+                Placeholder="+380 99333333"
+                ReturnType="Done"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                Keyboard="Telephone"
+                WidthRequest="145"
+                PlaceholderColor="Grey"
+                FontAttributes="Bold"
+                MaxLength="13"
+                FontSize="18"/>
+        </Frame>
+
+        <Frame Grid.Row="3" HeightRequest="57" WidthRequest="350" BorderColor="#D9D9D9" CornerRadius="20" Padding="5">
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Пароль"
+                ReturnType="Done"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                IsPassword="True"
+                Keyboard="Plain"
+                TextColor="Black"
+                PlaceholderColor="Grey"
+                FontAttributes="Bold"
+                FontSize="18"/>
+        </Frame>
+
+        <Grid Grid.Row="4" 
+              ColumnDefinitions="200,200">
+
+            <ImageButton Grid.Column="0" 
+             x:Name="Btn_Sign_In" 
+             Clicked="Btn_Sign_In_Clicked"
+             Source="sign_in.png"
+             HeightRequest="50" WidthRequest="180"
+             VerticalOptions="Center" HorizontalOptions="Center"         
+             />
+            <ImageButton Grid.Column="1" 
+             x:Name="Btn_Sign_UP"
+             Clicked="Btn_Sign_UP_Clicked"
+             Source="sign_up.png"
+             HeightRequest="50" WidthRequest="180"
+             VerticalOptions="Center" HorizontalOptions="Start"/>
+        </Grid>
+
+
+    </Grid>
     
 </ContentPage>
