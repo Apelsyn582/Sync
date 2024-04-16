@@ -14,6 +14,10 @@ namespace Project2024.Server
 
         public required string Time { get; set; }
 
+        public required string Date { get; set; }
+
+        public required string Transport { get; set; }
+
         public required User Owner { get; set; }
     }
 }

@@ -53,6 +53,7 @@
 	  <None Remove="Resources\Images\burger.jpg" />
 	  <None Remove="Resources\Images\create_route.png" />
 	  <None Remove="Resources\Images\delete_pin.png" />
+	  <None Remove="Resources\Images\goback.png" />
 	  <None Remove="Resources\Images\join_to_route.png" />
 	  <None Remove="Resources\Images\line.png" />
 	  <None Remove="Resources\Images\save_personal_information.png" />

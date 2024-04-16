@@ -14,6 +14,8 @@ namespace Project2024.ViewModels
 
         private bool _isCreatingRoute;
         private bool _isMainPage;
+        private bool _isMainPageBtn;
+        private bool _isOtherBtn;
         private bool _isCreateOrJoin;
 
         public bool IsCreatingRoute
@@ -29,6 +31,19 @@ namespace Project2024.ViewModels
             }
         }
 
+        public bool IsOtherBtn
+        {
+            get => _isOtherBtn;
+            set
+            {
+                if (_isOtherBtn != value)
+                {
+                    _isOtherBtn = value;
+                    OnPropertyChanged(nameof(IsOtherBtn));
+                }
+            }
+        }
+
         public bool IsMainPage
         {
             get => _isMainPage;
@@ -38,6 +53,19 @@ namespace Project2024.ViewModels
                 {
                     _isMainPage = value;
                     OnPropertyChanged(nameof(IsMainPage));
+                }
+            }
+        }
+
+        public bool IsMainPageBtn
+        {
+            get => _isMainPageBtn;
+            set
+            {
+                if (_isMainPageBtn != value)
+                {
+                    _isMainPageBtn = value;
+                    OnPropertyChanged(nameof(IsMainPageBtn));
                 }
             }
         }
@@ -64,7 +92,10 @@ namespace Project2024.ViewModels
         {
             IsCreatingRoute = false;
             IsMainPage = true;
+            IsMainPageBtn = true;
+            IsOtherBtn = false;
             IsCreateOrJoin = false;
+
         }
 
         public void CreatingRoute()
@@ -72,6 +103,8 @@ namespace Project2024.ViewModels
             IsMainPage = false;
             IsCreateOrJoin = false;
             IsCreatingRoute = true;
+            IsMainPageBtn = false;
+            IsOtherBtn = true;
         }
 
         public void CreateOrJoin()
@@ -79,6 +112,8 @@ namespace Project2024.ViewModels
             IsMainPage = false;
             IsCreateOrJoin = true;
             IsCreatingRoute = false;
+            IsMainPageBtn = false;
+            IsOtherBtn = true;
         }
 
         public void Main()
@@ -86,6 +121,8 @@ namespace Project2024.ViewModels
             IsMainPage = true;
             IsCreatingRoute = false;
             IsCreateOrJoin = false;
+            IsMainPageBtn = true;
+            IsOtherBtn = false;
         }
     }
 }

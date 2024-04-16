@@ -17,6 +17,8 @@ namespace Project2024.Server
                 StartPin = new(49.836910, 24.001949),
                 EndPin = new(49.864880, 24.053089),
                 Time = "14:15",
+                Date = "16.04",
+                Transport = "Taxi",
                 Owner = new() { Name = "Іван", Phone = "+380676680971", Password = "1234" }
             },
             new()
@@ -24,6 +26,8 @@ namespace Project2024.Server
                 StartPin = new(49.898910, 24.881949),
                 EndPin = new(49.877880, 24.053089),
                 Time = "14:15",
+                Date = "16.04",
+                Transport = "Taxi",
                 Owner = new() { Name = "Степан", Phone = "+380676680971", Password = "1234" }
             },
         };

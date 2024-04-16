@@ -24,12 +24,14 @@
             </x:Arguments>
         </Map>
 
-        <ImageButton Source="burger.jpg" Grid.Row="0" x:Name="BtbMenu" Clicked="BtbMenu_Clicked"  HorizontalOptions="Start" VerticalOptions="Start" Margin="10" />
-        <Button x:Name="LogOut" Clicked="LogOut_Clicked" Text="Тимчасова кнопка вийти" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="40" Margin="20"/>
+        <ImageButton IsVisible="{Binding IsMainPageBtn}" Source="burger.jpg" Grid.Row="0" x:Name="BtbMenu" Clicked="BtbMenu_Clicked"  HorizontalOptions="Start" VerticalOptions="Start" Margin="10" />
+        <Button x:Name="LogOut" Clicked="LogOut_Clicked" Text="Тимчасова кнопка вийти" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="40" Margin="60"/>
 
+        <ImageButton IsVisible="{Binding IsOtherBtn}" Source="goback.png" Grid.Row="0" x:Name="BtbBack" Clicked="BtbBack_Clicked"  HorizontalOptions="Start" VerticalOptions="Start" Margin="10" />
+        
         <Frame Grid.Row="1" IsVisible="{Binding IsCreatingRoute}">
             <Grid Padding="0"
-        RowDefinitions=" 80, 80, 80">
+        RowDefinitions="80, 80">
 
                 <ImageButton Grid.Row="0"
                      x:Name="BtnSave"
@@ -48,20 +50,6 @@
                      WidthRequest="350"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"/>
-                
-                <Frame Grid.Row="2" HeightRequest="49" WidthRequest="350" BackgroundColor="#F3F3F3" CornerRadius="10" Padding="5">
-                    <Entry Grid.Row="2"
-               x:Name="TimeEntry"
-               Placeholder="11:11"
-               ReturnType="Done"
-               VerticalOptions="Center"
-               HorizontalOptions="Center"
-               TextColor="Black"
-               PlaceholderColor="Grey"
-               FontAttributes="Bold"
-               MaxLength="6"
-               FontSize="18"/>
-                </Frame>
 
             </Grid>
         </Frame>
@@ -92,7 +80,7 @@
 
         <Frame Grid.Row="1" IsVisible="{Binding IsCreateOrJoin}">
             <Grid Padding="0"
-                    RowDefinitions=" 120, 80, 26, 16">
+                  RowDefinitions=" 80, 80">
 
                 <ImageButton
                     Grid.Row="0"
@@ -115,8 +103,6 @@
                     HeightRequest="70"
                     WidthRequest="350"
                     BorderColor="#000000"/>
-
-
 
             </Grid>
         </Frame>

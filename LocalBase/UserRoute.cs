@@ -14,6 +14,8 @@ namespace Project2024.LocalBase
             StartPin = new _Pin(0,0),
             EndPin = new _Pin(0,0),
             Time = "99:99",
+            Date = "16.04",
+            Transport = "Taxi",
             Owner = new User()
         };
 
@@ -30,6 +32,15 @@ namespace Project2024.LocalBase
         public static string GetTime() 
         {
             return route.Time;
+        }
+        public static string GetDate()
+        {
+            return route.Date;
+        }
+
+        public static string GetTransport()
+        {
+            return route.Transport;
         }
         public static User GetOwner()
         {
@@ -61,6 +72,22 @@ namespace Project2024.LocalBase
             if (time != null)
             {
                 route.Time = time;
+            }
+        }
+
+        public static void SetDate(string date)
+        {
+            if (date != null)
+            {
+                route.Date = date;
+            }
+        }
+
+        public static void SetTransport(string transport)
+        {
+            if (transport != null)
+            {
+                route.Transport = transport;
             }
         }
 
