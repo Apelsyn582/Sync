@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project2024.Views.RouteInformationPage"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             Shell.NavBarIsVisible="False">
+
+    <Grid Padding="1"
+          RowDefinitions="40, 60, *, Auto">
+
+        <ImageButton Grid.Row="0" Grid.Column="1" x:Name="BtnDelete" Clicked="BtnDelete_Clicked"  Source="back.png" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="40" WidthRequest="112"/>
+
+        <Image Grid.Row="1" Source="information.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="360"/>
+
+        <Map Grid.Row="2" x:Name="map" MapType="Street"  IsShowingUser="True" IsTrafficEnabled="true" >
+            <x:Arguments>
+                <MapSpan>
+                    <x:Arguments>
+                        <sensors:Location>
+                            <x:Arguments>
+                                <x:Double>49.847407</x:Double>
+                                <x:Double>24.027073</x:Double>
+                            </x:Arguments>
+                        </sensors:Location>
+                        <x:Double>0.035</x:Double>
+                        <x:Double>0.035</x:Double>
+                    </x:Arguments>
+                </MapSpan>
+            </x:Arguments>
+        </Map>
+
+        <Frame Grid.Row="3" >
+            <Grid Padding="0"
+                  RowDefinitions=" 80, 80, 80">
+                <Frame Grid.Row="0" CornerRadius="10" BackgroundColor="#A8BFEE"
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       HeightRequest="70" WidthRequest="340" Padding="0,0,0,0">
+                    <Grid
+                        Padding="0"
+                        RowDefinitions="30,30">
+
+                        <Label Grid.Row="0" Text="Запланована дата і час поїздки" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                        <Label x:Name="BtnTime" Grid.Row="1" Text="djfhvj" VerticalOptions="End" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20"/>
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Row="1" CornerRadius="10" BackgroundColor="#A8BFEE"
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       HeightRequest="70" WidthRequest="340" Padding="0,0,0,0">
+                    <Grid
+                        Padding="0"
+                        RowDefinitions="30,30">
+                        
+                        <Label Grid.Row="0" Text="Інформація про авто" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                        <Label x:Name="BtnInformation" Grid.Row="1" Text="djfhvj" VerticalOptions="End" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20"/>
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Row="2" CornerRadius="10" BackgroundColor="#A8BFEE"
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       HeightRequest="70" WidthRequest="340" Padding="0,0,0,0">
+                    <Grid Padding="0"
+                          RowDefinitions="30,30">
+                        <Label Grid.Row="0" Text=" Ім'я та номер ініціатора поїздки" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                        <Label x:Name="BtnOwner" Grid.Row="1" Text="djfhvj" VerticalOptions="End" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20"/>
+                    </Grid>
+                </Frame>
+
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

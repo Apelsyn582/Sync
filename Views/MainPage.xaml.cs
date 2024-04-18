@@ -198,6 +198,8 @@ public partial class MainPage : ContentPage
                 Owner = UserRoute.GetOwner()
             };
 
+            RoutesRepository.AddRoute(route);
+
             await DisplayAlert("Маршрут додано", "Щоб переглянути маршрут відкрийте меню", "OK");
 
             _viewModel.Main();

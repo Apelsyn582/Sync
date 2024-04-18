@@ -23,7 +23,7 @@
             <ListView.ItemTemplate >
                 <DataTemplate >
                     <ViewCell>
-                        <Frame BackgroundColor="#144FC5" WidthRequest="360"  CornerRadius="15" Padding="5" Margin="5">
+                        <Frame x:Name="FrameCell" BackgroundColor="#144FC5" WidthRequest="360"  CornerRadius="15" Padding="5" Margin="5">
                             <StackLayout Orientation="Horizontal" Spacing="10">
                                 <Label Text=" "  VerticalOptions="Center" />
                                 <Image HeightRequest="48" WidthRequest="28" VerticalOptions="Center" Source="user.png" />
@@ -45,5 +45,10 @@
             </ListView.ItemTemplate>
 
         </ListView>
+
+        <Button Grid.Row="2" x:Name="BtnSave" Clicked="BtnSave_Clicked"
+                VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="360"
+                BackgroundColor="#144FC5" CornerRadius="15" Text="Приєднатися" FontSize="21" FontAttributes="Bold"
+                />
     </Grid>
 </ContentPage>

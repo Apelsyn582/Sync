@@ -33,6 +33,18 @@ namespace Project2024.Server
         };
 
 
+        public static Route GetRouteByOwnerName(string name)
+        { 
+            foreach (var route in routes)
+            {
+                if (route.Owner.Name == name)
+                {
+                    return route;
+                }
+            }
+            return null;
+        }
+
         public static List<Route> GetListWithFellowTravelers(Location StartLocation, Location EndLocation)
         {
             List<Route> _routes = new()
@@ -40,14 +52,14 @@ namespace Project2024.Server
 
             };
 
-
-
             foreach (var route in routes)
             {
 
-                var a = Location.CalculateDistance(new Location(route.StartPin.Latitude, route.StartPin.Longitude), StartLocation, DistanceUnits.Miles);
+                var dis_between_starts = Location.CalculateDistance(new Location(route.StartPin.Latitude, route.StartPin.Longitude), StartLocation, DistanceUnits.Miles);
 
-                if (a < 0.1864 && Location.CalculateDistance(new Location(route.EndPin.Latitude, route.EndPin.Longitude), EndLocation, DistanceUnits.Miles) < 0.1864)
+                var dis_between_ends = Location.CalculateDistance(new Location(route.EndPin.Latitude, route.EndPin.Longitude), EndLocation, DistanceUnits.Miles);
+
+                if (dis_between_starts < 0.1864 && dis_between_ends < 0.1864)
                 {
                     _routes.Add(route);
                 }

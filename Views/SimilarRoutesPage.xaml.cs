@@ -5,6 +5,7 @@ namespace Project2024.Views;
 
 public partial class SimilarRoutesPage : ContentPage
 {
+    private int selection_count = 0;
     public SimilarRoutesPage()
 	{
 		InitializeComponent();
@@ -30,18 +31,25 @@ public partial class SimilarRoutesPage : ContentPage
     private void ListOfRoutes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         ListOfRoutes.SelectedItem = null;
+        
     }
 
-    private void ListOfRoutes_ItemTapped(object sender, ItemTappedEventArgs e)
+    private async void ListOfRoutes_ItemTapped(object sender, ItemTappedEventArgs e)
     {
-        if (ListOfRoutes.SelectedItem != null)
+        if (e.Item != null)
         {
-            Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+            var selectedRoute = (Route)e.Item;
+            await Shell.Current.GoToAsync($"{nameof(RouteInformationPage)}?Name={selectedRoute.Owner.Name}");
         }
     }
 
     private void BtnDelete_Clicked(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+    }
+
+    private void BtnSave_Clicked(object sender, EventArgs e)
+    {
+
     }
 }
