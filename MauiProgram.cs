@@ -17,8 +17,9 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddTransient<MainPage>();
-        builder.Services.AddSingleton<LoadingPage> ();
+        builder.Services.AddSingleton<LoadingPage>();
         builder.Services.AddTransient<AuthService>();
+        builder.Services.AddTransient<MenuPage>();
         builder.Services.AddTransient<LogInPage>();
         builder.Services.AddTransient<SimilarRoutesPage>();
         builder.Services.AddTransient<PersonalDatePage>();

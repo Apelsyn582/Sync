@@ -19,5 +19,7 @@ namespace Project2024.Server
         public required string Transport { get; set; }
 
         public required User Owner { get; set; }
+
+        public required List<User> fellow_travelers {  get; set; }
     }
 }

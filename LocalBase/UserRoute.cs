@@ -9,42 +9,41 @@ namespace Project2024.LocalBase
 {
     public static class UserRoute
     {
-        private readonly static Route route = new()
-        {
-            StartPin = new _Pin(0,0),
-            EndPin = new _Pin(0,0),
-            Time = "99:99",
-            Date = "16.04",
-            Transport = "Taxi",
-            Owner = new User()
-        };
+
+        private static _Pin StartPin = new(0, 0);
+        private static _Pin EndPin = new(0, 0);
+        private static string Time = "99:99";
+        private static string Date = "16.04";
+        private static string Transport = "Taxi";
+        private static User Owner = new();
+       
 
         public static _Pin GetStartPin()
         {
-            return route.StartPin;
+            return StartPin;
         }
 
         public static _Pin GetEndPin()
         {
-            return route.EndPin;
+            return EndPin;
         }
 
         public static string GetTime() 
         {
-            return route.Time;
+            return Time;
         }
         public static string GetDate()
         {
-            return route.Date;
+            return Date;
         }
 
         public static string GetTransport()
         {
-            return route.Transport;
+            return Transport;
         }
         public static User GetOwner()
         {
-            return route.Owner;
+            return Owner;
         }
 
         public static void SetStartPin(double latitude, double longitude)
@@ -52,8 +51,8 @@ namespace Project2024.LocalBase
 
             if (latitude != 0 && longitude != 0)
             {
-                route.StartPin.Latitude = latitude;
-                route.StartPin.Longitude = longitude;
+                StartPin.Latitude = latitude;
+                StartPin.Longitude = longitude;
             }
         }
 
@@ -62,8 +61,8 @@ namespace Project2024.LocalBase
 
             if (latitude != 0 && longitude != 0)
             {
-                route.EndPin.Latitude = latitude;
-                route.EndPin.Longitude = longitude;
+                EndPin.Latitude = latitude;
+                EndPin.Longitude = longitude;
             }
         }
 
@@ -71,7 +70,7 @@ namespace Project2024.LocalBase
         {
             if (time != null)
             {
-                route.Time = time;
+                Time = time;
             }
         }
 
@@ -79,7 +78,7 @@ namespace Project2024.LocalBase
         {
             if (date != null)
             {
-                route.Date = date;
+                Date = date;
             }
         }
 
@@ -87,18 +86,18 @@ namespace Project2024.LocalBase
         {
             if (transport != null)
             {
-                route.Transport = transport;
+                Transport = transport;
             }
         }
 
         public static void SetOwner(User user)
         {
-            route.Owner = user;
+            Owner = user;
         }
 
         public static void AddName(string name)
         {
-            route.Owner.Name = name;
+            Owner.Name = name;
         }
     }
 }

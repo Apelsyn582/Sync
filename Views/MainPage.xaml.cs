@@ -27,11 +27,10 @@ public partial class MainPage : ContentPage
         BindingContext = _viewModel;
 
         _authService = authService;
-
     }
     private void BtbMenu_Clicked(object sender, EventArgs e)
     {
-
+        Shell.Current.GoToAsync(nameof(MenuPage));
     }
 
     private void BtbBack_Clicked(object sender, EventArgs e)
@@ -41,11 +40,11 @@ public partial class MainPage : ContentPage
         DeletePins();
     }
 
-    private void LogOut_Clicked(object sender, EventArgs e)
+    /*private void LogOut_Clicked(object sender, EventArgs e)
     {
         _authService.LogOut();
-        Shell.Current.GoToAsync(nameof(LoadingPage));
-    }
+        Shell.Current.GoToAsync(nameof(LogInPage));
+    }*/
 
     private void map_MapClicked(object sender, Microsoft.Maui.Controls.Maps.MapClickedEventArgs e)
     {
@@ -68,6 +67,8 @@ public partial class MainPage : ContentPage
 
                 map.Pins.Add(FirstPin);
 
+                LblHint.Text = "Оберіть кінець маршруту";
+
             }
             else if (PinCount == 2)
             {
@@ -83,6 +84,8 @@ public partial class MainPage : ContentPage
                 };
 
                 map.Pins.Add(SecondPin);
+
+                LblHint.Text = "Збережіть поїздку";
 
             }
             else
@@ -195,7 +198,8 @@ public partial class MainPage : ContentPage
                 Time = time,
                 Date = date,
                 Transport = carBrand,
-                Owner = UserRoute.GetOwner()
+                Owner = UserRoute.GetOwner(),
+                fellow_travelers = new()
             };
 
             RoutesRepository.AddRoute(route);

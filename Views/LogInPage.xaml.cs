@@ -51,16 +51,19 @@ public partial class LogInPage : ContentPage
 
     private void Btn_Sign_UP_Clicked(object sender, EventArgs e)
     {
-            if (!(UserRepository.IfPhoneIsBooked(Phone)) && PhoneAndPasswordCheck())
+            if (!(UserRepository.IfPhoneIsBooked(Phone)))
             {
-                user.Phone = Phone;
-                user.Password = PasswordHash.CreateHash(Password);
+                if (PhoneAndPasswordCheck())
+                {   
+                    user.Phone = Phone;
+                    user.Password = PasswordHash.CreateHash(Password);
 
-                UserRoute.SetOwner(user);
+                    UserRoute.SetOwner(user);
 
-               _authService.LogIn();
+                    _authService.LogIn();
 
-               Shell.Current.GoToAsync(nameof(PersonalDatePage));
+                    Shell.Current.GoToAsync(nameof(PersonalDatePage));
+                }
             }
             else
             {

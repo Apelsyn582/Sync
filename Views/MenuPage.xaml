@@ -1,0 +1,78 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project2024.Views.MenuPage"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+             Shell.NavBarIsVisible="False">
+
+    <StackLayout>
+
+        <ImageButton
+            Grid.Row="0"
+            x:Name="BtnProfile"
+            Clicked="BtnProfile_Clicked"
+            Source="profil.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            HeightRequest="90"
+            WidthRequest="310">
+        </ImageButton>
+
+
+        <ImageButton
+            Grid.Row="1"
+            x:Name="BtnCity"
+            Clicked="BtnCity_Clicked"
+            Source="btn_city.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            HeightRequest="90"
+            WidthRequest="310">
+        </ImageButton>
+
+        <ImageButton
+            Grid.Row="2"
+            x:Name="BtnTrips"
+            Clicked="BtnTrips_Clicked"
+            Source="btn_replay.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            HeightRequest="90"
+            WidthRequest="310">
+        </ImageButton>
+
+        <ImageButton
+            Grid.Row="3"
+            x:Name="BtnNews"
+            Clicked="BtnNews_Clicked"
+            Source="btn_news.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            HeightRequest="90"
+            WidthRequest="310">
+        </ImageButton>
+
+        <ImageButton
+            Grid.Row="4"
+            x:Name="BtnHelp"
+            Clicked="BtnTrips_Clicked"   
+            Source="btn_help.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            HeightRequest="90"
+            WidthRequest="310">
+        </ImageButton>
+
+        <ImageButton
+            Grid.Row="5"
+            x:Name="BtnService"
+            Clicked="BtnService_Clicked"
+            Source="btn_service.png"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            HeightRequest="90"
+            WidthRequest="310">
+        </ImageButton>
+
+    </StackLayout>
+
+</ContentPage>

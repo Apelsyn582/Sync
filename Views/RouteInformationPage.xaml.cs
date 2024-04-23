@@ -10,7 +10,13 @@ public partial class RouteInformationPage : ContentPage
 	{
 		InitializeComponent();
 
-        
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        LoadUsers();
     }
 
     public string Name
@@ -25,10 +31,34 @@ public partial class RouteInformationPage : ContentPage
 
             BtnOwner.Text = route.Owner.Name + " - " + route.Owner.Phone;
         }
+        get
+        {
+            return route.Owner.Name;
+        }
+    }
+    private void LoadUsers()
+    {
+        ListOffellow_travelers.ItemsSource = null;
+        ListOffellow_travelers.ItemsSource = new ObservableCollection<User>(RoutesRepository.GetFellowTravelers(Name));
     }
 
     private void BtnDelete_Clicked(object sender, EventArgs e)
     {
+        Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+    }
+
+    private void BtnFollow_Clicked(object sender, EventArgs e)
+    {
+        RoutesRepository.AddFellowTraveler(Name, new User()
+        {
+            Name = UserRoute.GetOwner().Name,
+            Password = UserRoute.GetOwner().Password,
+            Phone = UserRoute.GetOwner().Phone,
+        }
+        );
+
+        DisplayAlert("Ви приєдналися до поїздки", "Перейдіть в меню щоб побачити деталі поїздки", "OK");
+
         Shell.Current.GoToAsync($"//{nameof(MainPage)}");
     }
 }

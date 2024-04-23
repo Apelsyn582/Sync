@@ -1,10 +1,4 @@
-﻿using Microsoft.Maui.Devices.Sensors;
-using Project2024.LocalBase;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Project2024.Server
 {
@@ -19,20 +13,42 @@ namespace Project2024.Server
                 Time = "14:15",
                 Date = "16.04",
                 Transport = "Taxi",
-                Owner = new() { Name = "Іван", Phone = "+380676680971", Password = "1234" }
+                Owner = new() { Name = "Іван", Phone = "+380676680971", Password = "1234" },
+                fellow_travelers = new()
+                {
+                    new(){Name = "Іванка", Phone = "+380676686593", Password = "1234"},
+                    new(){Name = "Наталя", Phone = "+380098696740", Password = "1234"},
+                    new(){Name = "Олег", Phone = "+380674356565", Password = "1234"},
+                }
             },
             new()
             {
-                StartPin = new(49.898910, 24.881949),
-                EndPin = new(49.877880, 24.053089),
+                StartPin = new(49.836910, 24.001949),
+                EndPin = new(49.864880, 24.053089),
                 Time = "14:15",
                 Date = "16.04",
                 Transport = "Taxi",
-                Owner = new() { Name = "Степан", Phone = "+380676680971", Password = "1234" }
+                Owner = new() { Name = "Степан", Phone = "+380676909631", Password = "1234" },
+                fellow_travelers = new()
+                {
+                    new(){Name = "Іванка", Phone = "+380676686593", Password = "1234"},
+                    new(){Name = "Наталя", Phone = "+380098696740", Password = "1234"},
+                    new(){Name = "Олег", Phone = "+380674356565", Password = "1234"},
+                }
             },
         };
 
-
+        public static List<User> GetFellowTravelers(string owner_name)
+        {
+            foreach (var route in routes)
+            {
+                if (route.Owner.Name == owner_name)
+                {
+                    return route.fellow_travelers;
+                }
+            }
+            return null;
+        }
         public static Route GetRouteByOwnerName(string name)
         { 
             foreach (var route in routes)
@@ -69,6 +85,17 @@ namespace Project2024.Server
         public static void AddRoute(Route route)
         {
             routes.Add(route); 
+        }
+
+        public static void AddFellowTraveler(string owner_name, User user)
+        {
+            foreach (var route in routes)
+            {
+                if (route.Owner.Name == owner_name)
+                {
+                    route.fellow_travelers.Add(user);
+                }
+            }
         }
         public static void DeleteRoute(Route route)
         {

@@ -25,24 +25,27 @@
         </Map>
 
         <ImageButton IsVisible="{Binding IsMainPageBtn}" Source="burger.jpg" Grid.Row="0" x:Name="BtbMenu" Clicked="BtbMenu_Clicked"  HorizontalOptions="Start" VerticalOptions="Start" Margin="10" />
-        <Button x:Name="LogOut" Clicked="LogOut_Clicked" Text="Тимчасова кнопка вийти" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="40" Margin="60"/>
+
 
         <ImageButton IsVisible="{Binding IsOtherBtn}" Source="goback.png" Grid.Row="0" x:Name="BtbBack" Clicked="BtbBack_Clicked"  HorizontalOptions="Start" VerticalOptions="Start" Margin="10" />
         
         <Frame Grid.Row="1" IsVisible="{Binding IsCreatingRoute}">
             <Grid Padding="0"
-        RowDefinitions="80, 80">
+          RowDefinitions="30, 80, 80">
 
-                <ImageButton Grid.Row="0"
+                <Label Grid.Row="0" x:Name="LblHint" Text="Оберіть початок маршруту" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+
+                <ImageButton Grid.Row="1"
                      x:Name="BtnSave"
                      Clicked="BtnSave_Clicked"
                      Source="save_route.png"
+                     IsEnabled="{Binding IsSaveEnable}"
                      HeightRequest="60"
                      WidthRequest="350"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"/>
 
-                <ImageButton Grid.Row="1" 
+                <ImageButton Grid.Row="2" 
                      x:Name="BtnDeletePin"
                      Source="delete_pin.png"
                      Clicked="BtnDeletePin_Clicked"

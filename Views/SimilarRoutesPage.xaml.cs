@@ -15,17 +15,18 @@ public partial class SimilarRoutesPage : ContentPage
 	{
 		base.OnAppearing();
 
-        LoadContacts();
+        LoadUsers();
     }
 
-    private void LoadContacts()
+    private void LoadUsers()
     {
         Location start = new(UserRoute.GetStartPin().Latitude, UserRoute.GetStartPin().Longitude);
 
         Location end = new(UserRoute.GetEndPin().Latitude, UserRoute.GetEndPin().Longitude);
 
-        ListOfRoutes.ItemsSource = new ObservableCollection<Route>(RoutesRepository.GetListWithFellowTravelers(start, end));
+        var routes  = new ObservableCollection<Route>(RoutesRepository.GetListWithFellowTravelers(start, end));
 
+        ListOfRoutes.ItemsSource = routes;
     }
 
     private void ListOfRoutes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -48,8 +49,4 @@ public partial class SimilarRoutesPage : ContentPage
         Shell.Current.GoToAsync($"//{nameof(MainPage)}");
     }
 
-    private void BtnSave_Clicked(object sender, EventArgs e)
-    {
-
-    }
 }

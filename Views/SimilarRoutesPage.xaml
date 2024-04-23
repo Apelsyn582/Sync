@@ -14,12 +14,10 @@
             Grid.Row="1"
             Grid.Column="1"
             x:Name="ListOfRoutes" 
-            VerticalOptions="Start"
+            VerticalOptions="FillAndExpand"
             RowHeight="70"
-            HeightRequest="70"
             ItemSelected="ListOfRoutes_ItemSelected"
-            ItemTapped="ListOfRoutes_ItemTapped"
-    >
+            ItemTapped="ListOfRoutes_ItemTapped">
             <ListView.ItemTemplate >
                 <DataTemplate >
                     <ViewCell>
@@ -46,9 +44,7 @@
 
         </ListView>
 
-        <Button Grid.Row="2" x:Name="BtnSave" Clicked="BtnSave_Clicked"
-                VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" WidthRequest="360"
-                BackgroundColor="#144FC5" CornerRadius="15" Text="Приєднатися" FontSize="21" FontAttributes="Bold"
-                />
+       
+                
     </Grid>
 </ContentPage>
