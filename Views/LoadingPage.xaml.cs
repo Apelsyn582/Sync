@@ -4,19 +4,16 @@ namespace Project2024.Views;
 
 public partial class LoadingPage : ContentPage
 {
-    private readonly AuthService _authService;
-    public LoadingPage(AuthService authService)
+    public LoadingPage()
 	{
 		InitializeComponent();
-
-        _authService = authService;
     }
 
     protected override async void OnNavigatedTo(NavigatedToEventArgs args)
     {
         base.OnNavigatedTo(args);
 
-        if (await _authService.IsAuthenticatedAsync())
+        if (await AuthService.IsAuthenticatedAsync())
         {
             // код для випадку, коли аутентифікація пройшла успішно
             await Shell.Current.GoToAsync($"//{nameof(MainPage)}");

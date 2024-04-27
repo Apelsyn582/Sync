@@ -6,16 +6,13 @@ namespace Project2024.Views;
 
 public partial class LogInPage : ContentPage
 {
-    private readonly AuthService _authService;
+    private  User user;
 
-    private readonly User user;
-
-
-    public LogInPage(AuthService authService)
+    private int invalidPasswordAttempts = 0;
+    private int fiveInvalidPasswordAttempts = -1;
+    public LogInPage()
     {
         InitializeComponent();
-
-        _authService = authService;
 
         user = new User();
     }
@@ -31,43 +28,76 @@ public partial class LogInPage : ContentPage
     }
 
 
-    private void Btn_Sign_In_Clicked(object sender, EventArgs e)
+    private async void Btn_Sign_In_Clicked(object sender, EventArgs e)
     {
+
+         user = UserRepository.GetUserByPhone(Phone);
         
-            if (UserRepository.IfUserExists(Phone, PasswordHash.CreateHash(Password)))
+            if (UserRepository.IfUserExists(Phone) && PasswordHash.Authenticate(Password, user.Password, user.Salt))
             {
-                _authService.LogIn();
+                AuthService.LogIn();
 
                 UserRoute.SetOwner(UserRepository.GetUserByPhone(Phone));
 
-                Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             }
             else
             {
-                DisplayAlert("Помилка", "Номер телефону або пароль неправильний", "OK");
+                    invalidPasswordAttempts++;
+                    
+                    if(fiveInvalidPasswordAttempts == 0)
+                    {
+                        Btn_Sign_In.IsEnabled = false;
+                        await DisplayAlert("Помилка", "Номер телефону або пароль неправильний. Будь ласка, зачекайте 30 секунд.", "OK");
+                        await Task.Delay(30000);
+                        Btn_Sign_In.IsEnabled = true;
+                    }
+                    else if (fiveInvalidPasswordAttempts == 1)
+                    {
+                        Btn_Sign_In.IsEnabled = false;
+                        await DisplayAlert("Помилка", "Номер телефону або пароль неправильний. Будь ласка, зачекайте 2 хвилини.", "OK");
+                        await Task.Delay(120000);
+                        Btn_Sign_In.IsEnabled = true;
+                    }
+                    else if (fiveInvalidPasswordAttempts > 1)
+            {
+                        Btn_Sign_In.IsEnabled = false;
+                        await DisplayAlert("Помилка", "Номер телефону або пароль неправильний.  Вас заблоковано на 6 хвилин.", "OK");
+                        await Task.Delay(360000);
+                        Btn_Sign_In.IsEnabled = true;
+                    }
+
+                    if (invalidPasswordAttempts == 5)
+                    {
+                        fiveInvalidPasswordAttempts++;
+                        invalidPasswordAttempts = 0;
+                    } 
+
+                    await DisplayAlert("Помилка", "Номер телефону або пароль неправильний", "OK");
             }
         
     }
 
-    private void Btn_Sign_UP_Clicked(object sender, EventArgs e)
+    private async void Btn_Sign_UP_Clicked(object sender, EventArgs e)
     {
-            if (!(UserRepository.IfPhoneIsBooked(Phone)))
+            if (!(UserRepository.IfUserExists(Phone)))
             {
                 if (PhoneAndPasswordCheck())
-                {   
+                {
                     user.Phone = Phone;
-                    user.Password = PasswordHash.CreateHash(Password);
+                    user.Password = PasswordHash.HashPassword(Password, out byte[] salt);
+                    user.Salt = Convert.ToHexString(salt);
 
                     UserRoute.SetOwner(user);
 
-                    _authService.LogIn();
+                    AuthService.LogIn();
 
-                    Shell.Current.GoToAsync(nameof(PersonalDatePage));
+                    await Shell.Current.GoToAsync(nameof(PersonalDatePage));
                 }
             }
             else
             {
-                DisplayAlert("Помилка", "Номер телефону зайнятий", "OK");
+                await DisplayAlert("Помилка", "Номер телефону зайнятий", "OK");
             }
 
     }

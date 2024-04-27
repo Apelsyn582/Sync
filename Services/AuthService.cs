@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Project2024.Services
 {
-    public class AuthService
+    public static class AuthService
     {
         private const string AuthStateKey = "AuthState";
 
-        public async Task<bool> IsAuthenticatedAsync()
+        public static async Task<bool> IsAuthenticatedAsync()
         {
             await Task.Delay(2000);
 
             return Preferences.Default.Get<bool>(AuthStateKey, false);
         }
 
-        public void LogIn()
+        public static void LogIn()
         {
             Preferences.Default.Set<bool>(AuthStateKey, true);
         }
-        public void LogOut()
+        public static void LogOut()
         {
             Preferences.Default.Remove(AuthStateKey);
         }

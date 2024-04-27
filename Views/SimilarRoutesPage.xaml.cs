@@ -5,7 +5,6 @@ namespace Project2024.Views;
 
 public partial class SimilarRoutesPage : ContentPage
 {
-    private int selection_count = 0;
     public SimilarRoutesPage()
 	{
 		InitializeComponent();

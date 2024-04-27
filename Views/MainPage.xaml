@@ -7,7 +7,7 @@
     <Grid Padding="1"
   RowDefinitions="*, Auto">
 
-        <Map Grid.Row="0" x:Name="map" MapType="Street" MapClicked="map_MapClicked"  IsShowingUser="True" IsTrafficEnabled="true" >
+        <Map Grid.Row="0" x:Name="Map" MapType="Street" MapClicked="Map_MapClicked_1"  IsShowingUser="True" IsTrafficEnabled="true" >
             <x:Arguments>
                 <MapSpan>
                     <x:Arguments>

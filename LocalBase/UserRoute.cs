@@ -10,8 +10,8 @@ namespace Project2024.LocalBase
     public static class UserRoute
     {
 
-        private static _Pin StartPin = new(0, 0);
-        private static _Pin EndPin = new(0, 0);
+        private static readonly _Pin StartPin = new(0, 0);
+        private static readonly _Pin EndPin = new(0, 0);
         private static string Time = "99:99";
         private static string Date = "16.04";
         private static string Transport = "Taxi";

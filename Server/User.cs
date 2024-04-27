@@ -8,25 +8,35 @@ namespace Project2024.Server
 {
     public class User
     {
-        public string Name { get; set; } = "User";
+        private string phone = "0000000000000";
+        private string name = "User";
+        private string password = "????????";
+        private string salt = "";
 
-        public string Phone { get; set; } = "0000000000000";
-
-        public string Password { get; set; } = "????????";
-
-        public void ChangeName(string name)
+        public string Name
         {
-            Name = name;
+            get { return name; }
+            set { name = value; }
         }
 
-        public void ChangePhone(string phone)
+        public string Phone
         {
-            Phone = phone;
+            get { return phone; }
+            set { phone = value; }
         }
 
-        public void ChangePassword(string password)
+        public string Password
         {
-            Password = password;
+            get { return password; }
+            set { password = value; }
+        }
+
+        public string Salt
+        {
+            get { return salt; }
+            set { salt = value; }
         }
     }
+
 }
+

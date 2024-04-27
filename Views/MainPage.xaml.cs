@@ -8,9 +8,8 @@ namespace Project2024.Views;
 
 public partial class MainPage : ContentPage
 {
-    private readonly AuthService _authService;
 
-    private MainPageViewModel _viewModel;
+    private readonly MainPageViewModel _viewModel;
 
     
     public double StartLatitude = 0;
@@ -19,14 +18,12 @@ public partial class MainPage : ContentPage
     public double EndLongitude = 0;
     public int PinCount = 0;
 
-    public MainPage(AuthService authService)
+    public MainPage()
 	{
 		InitializeComponent();
 
         _viewModel = new MainPageViewModel();
         BindingContext = _viewModel;
-
-        _authService = authService;
     }
     private void BtbMenu_Clicked(object sender, EventArgs e)
     {
@@ -40,60 +37,6 @@ public partial class MainPage : ContentPage
         DeletePins();
     }
 
-    /*private void LogOut_Clicked(object sender, EventArgs e)
-    {
-        _authService.LogOut();
-        Shell.Current.GoToAsync(nameof(LogInPage));
-    }*/
-
-    private void map_MapClicked(object sender, Microsoft.Maui.Controls.Maps.MapClickedEventArgs e)
-    {
-        if(_viewModel.IsCreatingRoute == true)
-        {
-            PinCount++;
-
-            if (PinCount == 1)
-            {
-                StartLatitude = e.Location.Latitude;
-
-                StartLongitude = e.Location.Longitude;
-
-                Pin FirstPin = new()
-                {
-                    Label = "Початок маршруту",
-                    Type = PinType.Place,
-                    Location = new Location(StartLatitude, StartLongitude)
-                };
-
-                map.Pins.Add(FirstPin);
-
-                LblHint.Text = "Оберіть кінець маршруту";
-
-            }
-            else if (PinCount == 2)
-            {
-                EndLatitude = e.Location.Latitude;
-
-                EndLongitude = e.Location.Longitude;
-
-                Pin SecondPin = new()
-                {
-                    Label = "Кінець маршруту",
-                    Type = PinType.Place,
-                    Location = new Location(EndLatitude, EndLongitude)
-                };
-
-                map.Pins.Add(SecondPin);
-
-                LblHint.Text = "Збережіть поїздку";
-
-            }
-            else
-            {
-                return;
-            }
-        }
-    }
 
     private void BtnStart_Clicked(object sender, EventArgs e)
     {
@@ -119,13 +62,13 @@ public partial class MainPage : ContentPage
     {
         if (PinCount == 1)
         {
-            map.Pins.RemoveAt(0);
+            Map.Pins.RemoveAt(0);
 
             PinCount--;
         }
         else if (PinCount == 2)
         {
-            map.Pins.RemoveAt(1);
+            Map.Pins.RemoveAt(1);
 
             PinCount--;
         }
@@ -221,5 +164,52 @@ public partial class MainPage : ContentPage
 
     }
 
+    private void Map_MapClicked_1(object sender, MapClickedEventArgs e)
+    {
+        if (_viewModel.IsCreatingRoute == true)
+        {
+            PinCount++;
 
+            if (PinCount == 1)
+            {
+                StartLatitude = e.Location.Latitude;
+
+                StartLongitude = e.Location.Longitude;
+
+                Pin FirstPin = new()
+                {
+                    Label = "Початок маршруту",
+                    Type = PinType.Place,
+                    Location = new Location(StartLatitude, StartLongitude)
+                };
+
+                Map.Pins.Add(FirstPin);
+
+                LblHint.Text = "Оберіть кінець маршруту";
+
+            }
+            else if (PinCount == 2)
+            {
+                EndLatitude = e.Location.Latitude;
+
+                EndLongitude = e.Location.Longitude;
+
+                Pin SecondPin = new()
+                {
+                    Label = "Кінець маршруту",
+                    Type = PinType.Place,
+                    Location = new Location(EndLatitude, EndLongitude)
+                };
+
+                Map.Pins.Add(SecondPin);
+
+                LblHint.Text = "Збережіть поїздку";
+
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
 }

@@ -12,7 +12,7 @@ namespace Project2024.Server
     {
         public static List<User> users = new()
         {
-            new User{ Name="Admin", Phone="+380000000000", Password="e4ff319f93e3d2a63fc3dd4bf34666d922725efc536dd1d235455be49439ecda"},
+            new User{ Name="Admin", Phone="+380000000000", Password="55D2B4A12C17A237D83B4097368EB6E828B304BCEC7387AEDB84056BADF9D98B", Salt="8B5A8C129CFE4F02CFEB96E4841F1AAA14430C9834B9F19F5B2BDC4B9FAC6DF3"},
         };
 
         public static List<User> GetUsers() => users;
@@ -28,8 +28,8 @@ namespace Project2024.Server
 
                     Name = user.Name,
                     Phone = user.Phone,
-                    Password = user.Password
-
+                    Password = user.Password,
+                    Salt = user.Salt
                 };
             }
             else
@@ -50,51 +50,18 @@ namespace Project2024.Server
             users.Add(user);
         }
 
-
-        public static bool IfUserExists(string phone, string password)
-        {
-            return users.Any(u => u.Phone == phone && u.Password == password);
-        }
-
-
-
         public static bool IfNameIsBooked(string name)
         {
             return users.Any(u => u.Name == name);
         }
-
-        public static bool IfPhoneIsBooked(string phone)
+        public static bool IfUserExists(string phone)
         {
             return users.Any(u => u.Phone == phone);
-        }
-
+        }    
 
         public static void DeleteUser(User user)
         {
             users.Remove(user);
-        }
-
-        public static void ChangeName(User user, string name)
-        {
-            foreach (var item in users)
-            {
-                if(item.Password == user.Password)
-                {
-                    item.ChangeName(name);
-                }
-            }
-            
-        }
-
-        public static void ChangePhone(User user, string phone)
-        {
-            foreach (var item in users)
-            {
-                if (item.Password == user.Password)
-                {
-                    item.ChangePhone(phone);
-                }
-            }
         }
 
     }

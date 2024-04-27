@@ -13,12 +13,12 @@ namespace Project2024.Server
                 Time = "14:15",
                 Date = "16.04",
                 Transport = "Taxi",
-                Owner = new() { Name = "Іван", Phone = "+380676680971", Password = "1234" },
+                Owner = new() { Name = "Іван", Phone = "+380676680971"},
                 fellow_travelers = new()
                 {
-                    new(){Name = "Іванка", Phone = "+380676686593", Password = "1234"},
-                    new(){Name = "Наталя", Phone = "+380098696740", Password = "1234"},
-                    new(){Name = "Олег", Phone = "+380674356565", Password = "1234"},
+                    new(){Name = "Іванка", Phone = "+380676686593"},
+                    new(){Name = "Наталя", Phone = "+380098696740"},
+                    new(){Name = "Олег", Phone = "+380674356565"},
                 }
             },
             new()
@@ -28,7 +28,7 @@ namespace Project2024.Server
                 Time = "14:15",
                 Date = "16.04",
                 Transport = "Taxi",
-                Owner = new() { Name = "Степан", Phone = "+380676909631", Password = "1234" },
+                Owner = new() { Name = "Степан", Phone = "+380676909631"},
                 fellow_travelers = new()
                 {
                     new(){Name = "Іванка", Phone = "+380676686593", Password = "1234"},

@@ -4,12 +4,9 @@ namespace Project2024.Views;
 
 public partial class MenuPage : ContentPage
 {
-    private readonly AuthService _authService;
-    public MenuPage(AuthService authService)
+    public MenuPage()
 	{
 		InitializeComponent();
-
-        _authService = authService;
     }
 
     private void BtnProfile_Clicked(object sender, EventArgs e)
@@ -36,7 +33,7 @@ public partial class MenuPage : ContentPage
 
     private void BtnService_Clicked(object sender, EventArgs e)
     {
-        _authService.LogOut();
-        Shell.Current.GoToAsync($"//{nameof(LogInPage)}");
+        AuthService.LogOut();
+        System.Environment.Exit(0);
     }
 }
