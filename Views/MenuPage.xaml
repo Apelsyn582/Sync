@@ -9,7 +9,7 @@
         <ImageButton
             Grid.Row="0"
             x:Name="BtnProfile"
-            Clicked="BtnProfile_Clicked"
+            
             Source="profil.png"
             VerticalOptions="Start"
             HorizontalOptions="Start"
@@ -21,7 +21,7 @@
         <ImageButton
             Grid.Row="1"
             x:Name="BtnCity"
-            Clicked="BtnCity_Clicked"
+            
             Source="btn_city.png"
             VerticalOptions="Start"
             HorizontalOptions="Start"
@@ -43,7 +43,7 @@
         <ImageButton
             Grid.Row="3"
             x:Name="BtnNews"
-            Clicked="BtnNews_Clicked"
+            
             Source="btn_news.png"
             VerticalOptions="Start"
             HorizontalOptions="Start"
@@ -54,7 +54,7 @@
         <ImageButton
             Grid.Row="4"
             x:Name="BtnHelp"
-            Clicked="BtnTrips_Clicked"   
+               
             Source="btn_help.png"
             VerticalOptions="Start"
             HorizontalOptions="Start"

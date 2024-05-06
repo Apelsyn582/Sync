@@ -1,5 +1,4 @@
-﻿using Project2024.Services;
-
+﻿
 namespace Project2024;
 
 public static class MauiProgram
@@ -23,7 +22,7 @@ public static class MauiProgram
         builder.Services.AddTransient<SimilarRoutesPage>();
         builder.Services.AddTransient<PersonalDatePage>();
         builder.Services.AddTransient<RouteInformationPage>();
-
+        builder.Services.AddTransient<UserTripsPage>();
 
         return builder.Build();
 	}

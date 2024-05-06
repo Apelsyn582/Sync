@@ -8,7 +8,7 @@ public class PasswordHash
     public static string HashPassword(string password, out byte[] salt)
     {
         const int keySize = 32; // Розмір виводу хешу в байтах (256 біт для SHA-256)
-        const int iterations = 100000;
+        const int iterations = 20000;
         HashAlgorithmName hashAlgorithm = HashAlgorithmName.SHA256;
 
         salt = new byte[keySize];

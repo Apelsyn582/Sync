@@ -33,7 +33,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg"  BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -57,9 +57,12 @@
 	  <None Remove="Resources\Images\btn_replay.png" />
 	  <None Remove="Resources\Images\btn_service.png" />
 	  <None Remove="Resources\Images\burger.jpg" />
+	  <None Remove="Resources\Images\cancel.png" />
+	  <None Remove="Resources\Images\complete.png" />
 	  <None Remove="Resources\Images\create_route.png" />
 	  <None Remove="Resources\Images\criss_cross.png" />
 	  <None Remove="Resources\Images\delete_pin.png" />
+	  <None Remove="Resources\Images\disconnect.png" />
 	  <None Remove="Resources\Images\fellow_travelers.png" />
 	  <None Remove="Resources\Images\follow.png" />
 	  <None Remove="Resources\Images\goback.png" />
@@ -74,6 +77,7 @@
 	  <None Remove="Resources\Images\sign_up.png" />
 	  <None Remove="Resources\Images\start.png" />
 	  <None Remove="Resources\Images\strilka.png" />
+	  <None Remove="Resources\Images\triplbl.png" />
 	  <None Remove="Resources\Images\user.png" />
 	</ItemGroup>
 
@@ -98,6 +102,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SimilarRoutesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UserTripsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

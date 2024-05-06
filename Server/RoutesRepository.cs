@@ -97,6 +97,17 @@ namespace Project2024.Server
                 }
             }
         }
+
+        public static void RemoveFellowTraveler(string owner_name, User user)
+        {
+            foreach (var route in routes)
+            {
+                if (route.Owner.Name == owner_name)
+                {
+                    route.fellow_travelers.Remove(user);
+                }
+            }
+        }
         public static void DeleteRoute(Route route)
         {
             routes.Remove(route);

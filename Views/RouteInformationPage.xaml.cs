@@ -6,6 +6,7 @@ namespace Project2024.Views;
 public partial class RouteInformationPage : ContentPage
 {
     private Route route;
+
 	public RouteInformationPage()
 	{
 		InitializeComponent();
@@ -25,7 +26,7 @@ public partial class RouteInformationPage : ContentPage
         {
             route = RoutesRepository.GetRouteByOwnerName(value);
 
-            BtnTime.Text = route.Date + " " + route.Time; //переробити на назву м≥с€ц€ (Ї номер)
+            BtnTime.Text = route.Date + " " + route.Time;
 
             BtnInformation.Text = route.Transport;
 
@@ -57,8 +58,13 @@ public partial class RouteInformationPage : ContentPage
         }
         );
 
+        UserRoute.AddActiveRoute(route);
+
         DisplayAlert("¬и приЇдналис€ до поњздки", "ѕерейд≥ть в меню щоб побачити детал≥ поњздки", "OK");
 
         Shell.Current.GoToAsync($"//{nameof(MainPage)}");
     }
+
+    
 }
+

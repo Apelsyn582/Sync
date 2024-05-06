@@ -63,8 +63,7 @@
             <Frame Grid.Row="1" CornerRadius="10" BackgroundColor="#A8BFEE"
                        VerticalOptions="Center" HorizontalOptions="Center"
                        HeightRequest="70" WidthRequest="340" Padding="0,0,0,0">
-                <Grid
-                        Padding="0"
+                <Grid   Padding="0"
                         RowDefinitions="30,30">
 
                     <Label Grid.Row="0" Text="Інформація про авто" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>

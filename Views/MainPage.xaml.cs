@@ -10,7 +10,6 @@ public partial class MainPage : ContentPage
 {
 
     private readonly MainPageViewModel _viewModel;
-
     
     public double StartLatitude = 0;
     public double StartLongitude = 0;
@@ -35,6 +34,7 @@ public partial class MainPage : ContentPage
         _viewModel.Main();
         DeletePins();
         DeletePins();
+        PinCount = 0;
     }
 
 
@@ -85,6 +85,7 @@ public partial class MainPage : ContentPage
             _viewModel.Main();
             DeletePins();
             DeletePins();
+            PinCount = 0;
 
             await Shell.Current.GoToAsync(nameof(SimilarRoutesPage));
         }
@@ -139,11 +140,13 @@ public partial class MainPage : ContentPage
                 StartPin = UserRoute.GetStartPin(),
                 EndPin = UserRoute.GetEndPin(),
                 Time = time,
-                Date = date,
+                Date = GetMonth(date),
                 Transport = carBrand,
                 Owner = UserRoute.GetOwner(),
                 fellow_travelers = new()
             };
+
+            UserRoute.AddMyRoute(route);
 
             RoutesRepository.AddRoute(route);
 
@@ -152,6 +155,7 @@ public partial class MainPage : ContentPage
             _viewModel.Main();
             DeletePins();
             DeletePins();
+            PinCount = 0;
 
         }
         else
@@ -211,5 +215,33 @@ public partial class MainPage : ContentPage
                 return;
             }
         }
+
+    }
+    private string GetMonth(string date)
+    {
+
+        string[] parts = date.Split('.');
+
+        if (parts.Length != 2)
+        {
+            return "Некоректний формат дати";
+        }
+
+        string[] months = {
+        "січня", "лютого", "березня", "квітня",
+        "травня", "червня", "липня", "серпня",
+        "вересня", "жовтня", "листопада", "грудня"
+    };
+
+
+        int month;
+        if (!int.TryParse(parts[1], out month) || month < 1 || month > 12)
+        {
+            return "Некоректний місяць";
+        }
+        string monthString = months[month - 1];
+
+        return $"{parts[0]}{" "}{monthString}";
+
     }
 }

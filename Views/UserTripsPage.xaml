@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project2024.Views.UserTripsPage"
+            Shell.NavBarIsVisible="False">
+
+    <Grid Padding="1"
+      RowDefinitions="40, 60, 50, Auto">
+        
+        <ImageButton Grid.Row="0" x:Name="BtnDelete" Clicked="BtnDelete_Clicked"  Source="back.png" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="40" WidthRequest="112"/>
+        
+        <Image Grid.Row="1" Source="triplbl.png" />
+
+        <Grid Padding="1"
+              Grid.Row="2"
+              ColumnDefinitions="130, 130, 130">
+            <Frame Grid.Column="0" x:Name="Frame1" CornerRadius="15" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="120" BackgroundColor="#D9D9D9">
+                <Button Text="Власні" x:Name="BtnOwn" Clicked="BtnOwn_Clicked" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="110" BackgroundColor="#D9D9D9"/>
+            </Frame>
+            <Frame Grid.Column="1" x:Name="Frame2" CornerRadius="15" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="120" BackgroundColor="#D9D9D9">
+                <Button Text="Активні" x:Name="BtnActive" Clicked="BtnActive_Clicked" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="110" BackgroundColor="#D9D9D9"/>
+            </Frame>
+            <Frame Grid.Column="2" x:Name="Frame3" CornerRadius="15" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="120" BackgroundColor="#D9D9D9">
+                <Button Text="Завершені" x:Name="BtnCompleted" Clicked="BtnCompleted_Clicked" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="110" BackgroundColor="#D9D9D9"/>
+            </Frame>
+        </Grid>
+
+        <ListView
+        Grid.Row="3" IsVisible="false"
+        x:Name="ListOfOwnRoutes" 
+        IsPullToRefreshEnabled="True"
+        VerticalOptions="FillAndExpand"
+        RowHeight="200"
+>
+            <ListView.ItemTemplate >
+                <DataTemplate >
+                    <ViewCell>
+
+                        <Frame  x:Name="FrameOwn" CornerRadius="10" HasShadow="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="230" WidthRequest="390">
+                        <VerticalStackLayout Spacing="10">
+                                <Grid   Padding="0"
+                                        ColumnDefinitions="120, 80,60">
+                                    <Label Grid.Column="0"  Text="{Binding Date}" FontSize="22"/>
+                                    <Label Grid.Column="1" Text=" 2024р,          " FontSize="22"/>
+                                    <Label Grid.Column="2" Text="{Binding Time}" FontSize="22"/>
+                                </Grid>
+                                
+
+                            <Frame  CornerRadius="10" BackgroundColor="#A8BFEE"
+                                    VerticalOptions="Center" HorizontalOptions="Center"
+                                    HeightRequest="50" WidthRequest="340" Padding="0,0,0,0">
+                                <Grid   Padding="0"
+                                        RowDefinitions="20,30">
+                                    <Label Grid.Row="0" Text="Інформація про авто" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                                    <Label Grid.Row="1" Text="{Binding Transport}" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20"/>
+                                </Grid>
+                            </Frame>
+
+                            <Frame Grid.Row="2" CornerRadius="10" BackgroundColor="#A8BFEE"
+                                    VerticalOptions="Center" HorizontalOptions="Center"
+                                    HeightRequest="50" WidthRequest="340" Padding="0,0,0,0">
+                            <Grid Padding="0"
+                                  RowDefinitions="20,30">
+                                    <Label Grid.Row="0" Text=" Ім'я та номер ініціатора поїздки" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                                        <Grid   Padding="0"
+                                                Grid.Row="1"
+                                                ColumnDefinitions="70, 20,180">
+                                            <Label Grid.Column="0" VerticalOptions="Start" HorizontalOptions="End" TextColor="White" FontAttributes="Bold" FontSize="20" Text="{Binding Owner.Name}"/>
+                                            <Label Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20" Text="-"/>
+                                            <Label Grid.Column="2" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20" Text="{Binding Owner.Phone}"/>
+                                        </Grid>
+                                        
+                            </Grid>
+                            </Frame>
+
+                        <Grid ColumnDefinitions="170, 170">
+                            <ImageButton x:Name="BtnCancelMyTrip" Grid.Column="0" Clicked="BtnCancelMyTrip_Clicked" Source="cancel.png" HeightRequest="26" WidthRequest="135" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                            <ImageButton x:Name="BtnCompleteTrip" Grid.Column="1" Source="complete.png" Clicked="BtnCompleteTrip_Clicked"  HeightRequest="26" WidthRequest="135" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Grid>
+
+                        </VerticalStackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <ListView
+        Grid.Row="3" IsVisible="false"
+        x:Name="ListOfActiveRoutes" 
+        IsPullToRefreshEnabled="True"
+        VerticalOptions="FillAndExpand"
+        RowHeight="200"
+>
+            <ListView.ItemTemplate >
+                <DataTemplate >
+                    <ViewCell>
+
+                        <Frame  x:Name="FrameOwn" CornerRadius="10" HasShadow="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="230" WidthRequest="390">
+                            <VerticalStackLayout Spacing="10">
+                                <Grid   Padding="0"
+                                        ColumnDefinitions="60, 100,100">
+                                    <Label Grid.Column="0"  Text="{Binding Date}" FontSize="22"/>
+                                    <Label Grid.Column="1" Text=" 2024р,          " FontSize="22"/>
+                                    <Label Grid.Column="2" Text="{Binding Time}" FontSize="22"/>
+                                </Grid>
+
+
+                                <Frame  CornerRadius="10" BackgroundColor="#A8BFEE"
+                                    VerticalOptions="Center" HorizontalOptions="Center"
+                                    HeightRequest="50" WidthRequest="340" Padding="0,0,0,0">
+                                    <Grid   Padding="0"
+                                        RowDefinitions="20,30">
+                                        <Label Grid.Row="0" Text="Інформація про авто" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                                        <Label Grid.Row="1" Text="{Binding Transport}" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20"/>
+                                    </Grid>
+                                </Frame>
+
+                                <Frame Grid.Row="2" CornerRadius="10" BackgroundColor="#A8BFEE"
+                                    VerticalOptions="Center" HorizontalOptions="Center"
+                                    HeightRequest="50" WidthRequest="340" Padding="0,0,0,0">
+                                    <Grid Padding="0"
+                                  RowDefinitions="20,30">
+                                        <Label Grid.Row="0" Text=" Ім'я та номер ініціатора поїздки" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                                        <Grid   Padding="0"
+                                                Grid.Row="1"
+                                                ColumnDefinitions="70, 20,180">
+                                            <Label Grid.Column="0" VerticalOptions="Start" HorizontalOptions="End" TextColor="White" FontAttributes="Bold" FontSize="20" Text="{Binding Owner.Name}"/>
+                                            <Label Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20" Text="-"/>
+                                            <Label Grid.Column="2" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20" Text="{Binding Owner.Phone}"/>
+                                        </Grid>
+
+                                    </Grid>
+                                </Frame>
+
+                                <ImageButton x:Name="BtnDisconnect" Clicked="BtnDisconnect_Clicked"  Source="disconnect.png" HeightRequest="26" WidthRequest="135" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                            </VerticalStackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <ListView
+        Grid.Row="3" IsVisible="false"
+        x:Name="ListOfCompletedRoutes" 
+        IsPullToRefreshEnabled="True"
+        VerticalOptions="FillAndExpand"
+        RowHeight="200"
+>
+            <ListView.ItemTemplate >
+                <DataTemplate >
+                    <ViewCell>
+
+                        <Frame  x:Name="FrameOwn" CornerRadius="10" HasShadow="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="230" WidthRequest="390">
+                            <VerticalStackLayout Spacing="10">
+                                <Grid   Padding="0"
+                                        ColumnDefinitions="120, 80,60">
+                                    <Label Grid.Column="0"  Text="{Binding Date}" FontSize="22"/>
+                                    <Label Grid.Column="1" Text=" 2024р,          " FontSize="22"/>
+                                    <Label Grid.Column="2" Text="{Binding Time}" FontSize="22"/>
+                                </Grid>
+
+
+                                <Frame  CornerRadius="10" BackgroundColor="#A8BFEE"
+                                    VerticalOptions="Center" HorizontalOptions="Center"
+                                    HeightRequest="50" WidthRequest="340" Padding="0,0,0,0">
+                                    <Grid   Padding="0"
+                                        RowDefinitions="20,30">
+                                        <Label Grid.Row="0" Text="Інформація про авто" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                                        <Label Grid.Row="1" Text="{Binding Transport}" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20"/>
+                                    </Grid>
+                                </Frame>
+
+                                <Frame Grid.Row="2" CornerRadius="10" BackgroundColor="#A8BFEE"
+                                    VerticalOptions="Center" HorizontalOptions="Center"
+                                    HeightRequest="50" WidthRequest="340" Padding="0,0,0,0">
+                                    <Grid Padding="0"
+                                  RowDefinitions="20,30">
+                                        <Label Grid.Row="0" Text=" Ім'я та номер ініціатора поїздки" VerticalOptions="Start" HorizontalOptions="Center" TextColor="#837878" FontAttributes="Bold" FontSize="16"/>
+                                        <Grid   Padding="0"
+                                                Grid.Row="1"
+                                                ColumnDefinitions="70, 20,180">
+                                            <Label Grid.Column="0" VerticalOptions="Start" HorizontalOptions="End" TextColor="White" FontAttributes="Bold" FontSize="20" Text="{Binding Owner.Name}"/>
+                                            <Label Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20" Text="-"/>
+                                            <Label Grid.Column="2" VerticalOptions="Start" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="20" Text="{Binding Owner.Phone}"/>
+                                        </Grid>
+
+                                    </Grid>
+                                </Frame>
+
+                            </VerticalStackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+
+    </Grid>
+</ContentPage>
