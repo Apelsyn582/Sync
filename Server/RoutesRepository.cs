@@ -10,10 +10,10 @@ namespace Project2024.Server
             {
                 StartPin = new(49.836910, 24.001949),
                 EndPin = new(49.864880, 24.053089),
-                Time = "14:15",
-                Date = "16.04",
+                Time = "16:15",
+                Date = "20.05",
                 Transport = "Taxi",
-                Owner = new() { Name = "Іван", Phone = "+380676680971"},
+                Owner = new() { Name = "Юра", Phone = "+380676680971"},
                 fellow_travelers = new()
                 {
                     new(){Name = "Іванка", Phone = "+380676686593"},
@@ -25,15 +25,15 @@ namespace Project2024.Server
             {
                 StartPin = new(49.836910, 24.001949),
                 EndPin = new(49.864880, 24.053089),
-                Time = "14:15",
-                Date = "16.04",
+                Time = "19:45",
+                Date = "20.05",
                 Transport = "Taxi",
-                Owner = new() { Name = "Степан", Phone = "+380676909631"},
+                Owner = new() { Name = "Марина", Phone = "+380676909631"},
                 fellow_travelers = new()
                 {
-                    new(){Name = "Іванка", Phone = "+380676686593", Password = "1234"},
-                    new(){Name = "Наталя", Phone = "+380098696740", Password = "1234"},
-                    new(){Name = "Олег", Phone = "+380674356565", Password = "1234"},
+                    new(){Name = "Володя", Phone = "+380676686593", Password = "1234"},
+                    new(){Name = "Віка", Phone = "+380098696740", Password = "1234"},
+                    new(){Name = "Любомир", Phone = "+380674356565", Password = "1234"},
                 }
             },
         };
@@ -108,9 +108,16 @@ namespace Project2024.Server
                 }
             }
         }
-        public static void DeleteRoute(Route route)
+        public static void DeleteRoute(string owner_name, string time, string date)
         {
-            routes.Remove(route);
+            for (int i = 0; i < routes.Count; i++)
+            {
+                if (routes[i].Owner.Name == owner_name && routes[i].Time == time && routes[i].Date == date)
+                {
+                    routes.Remove(routes[i]);
+                }
+            }
+            
         }
 
     }

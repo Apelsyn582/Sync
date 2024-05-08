@@ -49,20 +49,20 @@
         </Frame>
 
         <Grid Grid.Row="6" 
-              ColumnDefinitions="200,200">
+              ColumnDefinitions="180,180">
 
             <ImageButton Grid.Column="0" 
              x:Name="Btn_Sign_In" 
              Clicked="Btn_Sign_In_Clicked"
              Source="sign_in.png"
-             HeightRequest="50" WidthRequest="180"
-             VerticalOptions="Center" HorizontalOptions="Center"         
+             HeightRequest="50" WidthRequest="170"
+             VerticalOptions="Center" HorizontalOptions="Start"         
              />
             <ImageButton Grid.Column="1" 
              x:Name="Btn_Sign_UP"
              Clicked="Btn_Sign_UP_Clicked"
              Source="sign_up.png"
-             HeightRequest="50" WidthRequest="180"
+             HeightRequest="50" WidthRequest="170"
              VerticalOptions="Center" HorizontalOptions="Start"/>
         </Grid>
 

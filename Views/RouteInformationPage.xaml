@@ -10,7 +10,7 @@
 
         <ImageButton Grid.Row="0" Grid.Column="1" x:Name="BtnDelete" Clicked="BtnDelete_Clicked"  Source="back.png" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="40" WidthRequest="112"/>
 
-        <Image Grid.Row="1" Source="fellow_travelers.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="360"/>
+        <Image Grid.Row="1" Source="fellow_travelers.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="330"/>
 
         
         <ListView
@@ -23,7 +23,7 @@
             <ListView.ItemTemplate >
                 <DataTemplate >
                     <ViewCell>
-                        <Frame x:Name="FrameCell" BackgroundColor="#144FC5" WidthRequest="360"  CornerRadius="15" Padding="5" Margin="5">
+                        <Frame x:Name="FrameCell" BackgroundColor="#144FC5" WidthRequest="340"  CornerRadius="15" Padding="5" Margin="5">
                             <StackLayout Orientation="Horizontal" Spacing="10">
                                 <Label Text=" "  VerticalOptions="Center" />
                                 <Image HeightRequest="48" WidthRequest="28" VerticalOptions="Center" Source="user.png" />
@@ -45,7 +45,7 @@
         </ListView>
 
 
-        <Image Grid.Row="3" Source="information.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="360"/>
+        <Image Grid.Row="3" Source="information.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="55" WidthRequest="330"/>
         <Grid  Grid.Row="4" Padding="0"
                 RowDefinitions=" 80, 80, 80" >
             <Frame Grid.Row="0" CornerRadius="10" BackgroundColor="#A8BFEE"

@@ -41,7 +41,7 @@
                      Source="save_route.png"
                      IsEnabled="{Binding IsSaveEnable}"
                      HeightRequest="60"
-                     WidthRequest="350"
+                     WidthRequest="310"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"/>
 
@@ -50,7 +50,7 @@
                      Source="delete_pin.png"
                      Clicked="BtnDeletePin_Clicked"
                      HeightRequest="60"
-                     WidthRequest="350"
+                     WidthRequest="310"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"/>
 
@@ -76,7 +76,7 @@
             VerticalOptions="Start"
             HorizontalOptions="Center"
             HeightRequest="70"
-            WidthRequest="350"
+            WidthRequest="310"
             Source="start.png" />
             </Grid>
         </Frame>
@@ -92,8 +92,8 @@
                     Clicked="BtnJoinToRoute_Clicked"
                     VerticalOptions="Center"
                     HorizontalOptions="End"
-                    HeightRequest="70"
-                    WidthRequest="350"
+                    HeightRequest="60"
+                    WidthRequest="320"
                     BorderColor="#000000"/>
 
                 <ImageButton
@@ -103,8 +103,8 @@
                     Clicked="BtnCreateRoute_Clicked"
                     VerticalOptions="Center"
                     HorizontalOptions="Start"
-                    HeightRequest="70"
-                    WidthRequest="350"
+                    HeightRequest="60"
+                    WidthRequest="320"
                     BorderColor="#000000"/>
 
             </Grid>

@@ -9,11 +9,11 @@
         
         <ImageButton Grid.Row="0" x:Name="BtnDelete" Clicked="BtnDelete_Clicked"  Source="back.png" VerticalOptions="Start" HorizontalOptions="Start" HeightRequest="40" WidthRequest="112"/>
         
-        <Image Grid.Row="1" Source="triplbl.png" />
+        <Image Grid.Row="1" WidthRequest="320" Source="triplbl.png" />
 
         <Grid Padding="1"
               Grid.Row="2"
-              ColumnDefinitions="130, 130, 130">
+              ColumnDefinitions="125, 125, 125">
             <Frame Grid.Column="0" x:Name="Frame1" CornerRadius="15" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="120" BackgroundColor="#D9D9D9">
                 <Button Text="Власні" x:Name="BtnOwn" Clicked="BtnOwn_Clicked" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="35" WidthRequest="110" BackgroundColor="#D9D9D9"/>
             </Frame>

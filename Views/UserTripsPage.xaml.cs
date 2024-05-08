@@ -47,6 +47,7 @@ public partial class UserTripsPage : ContentPage
         ListOfOwnRoutes.IsVisible = false;
         ListOfActiveRoutes.IsVisible = false;
         ListOfCompletedRoutes.IsVisible = true;
+        LoadCompletedRoutes();
     }
     private void BtnCancelMyTrip_Clicked(object sender, EventArgs e)
     {
@@ -56,19 +57,31 @@ public partial class UserTripsPage : ContentPage
         {
             UserRoute.RemoveMyRoute(routeToRemove);
 
+            RoutesRepository.DeleteRoute(routeToRemove.Owner.Name, routeToRemove.Time, routeToRemove.Date);
+
+            LoadOwnRoutes();
+        }
+    }
+
+    private void BtnCompleteTrip_Clicked(object sender, EventArgs e)
+    {
+        var routeToRemove = (sender as ImageButton)?.BindingContext as Route;
+
+        if (routeToRemove != null)
+        {
+            UserRoute.RemoveMyRoute(routeToRemove);
+
+            RoutesRepository.DeleteRoute(routeToRemove.Owner.Name, routeToRemove.Time, routeToRemove.Date);
+
             LoadOwnRoutes();
 
             UserRoute.AddLastRoute(routeToRemove);
         }
     }
 
-    private void BtnCompleteTrip_Clicked(object sender, EventArgs e)
-    {
-
-    }
-
     private void LoadOwnRoutes()
     {
+
         OwnRoutes = UserRoute.GetMyRoutes();
 
         ListOfOwnRoutes.ItemsSource = OwnRoutes;
