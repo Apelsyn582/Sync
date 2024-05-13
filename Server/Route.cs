@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project2024.Server
+﻿namespace Project2024.Server
 {
     public class Route
     {
@@ -20,6 +14,6 @@ namespace Project2024.Server
 
         public required User Owner { get; set; }
 
-        public required List<User> fellow_travelers {  get; set; }
+        public required List<User> fellow_travelers { get; set; }
     }
 }

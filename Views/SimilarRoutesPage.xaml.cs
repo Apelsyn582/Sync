@@ -6,13 +6,13 @@ namespace Project2024.Views;
 public partial class SimilarRoutesPage : ContentPage
 {
     public SimilarRoutesPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
     }
     protected override void OnAppearing()
-	{
-		base.OnAppearing();
+    {
+        base.OnAppearing();
 
         LoadUsers();
     }
@@ -23,7 +23,7 @@ public partial class SimilarRoutesPage : ContentPage
 
         Location end = new(UserRoute.GetEndPin().Latitude, UserRoute.GetEndPin().Longitude);
 
-        var routes  = new ObservableCollection<Route>(RoutesRepository.GetListWithFellowTravelers(start, end));
+        var routes = new ObservableCollection<Route>(RoutesRepository.GetListWithFellowTravelers(start, end));
 
         ListOfRoutes.ItemsSource = routes;
     }
@@ -31,7 +31,7 @@ public partial class SimilarRoutesPage : ContentPage
     private void ListOfRoutes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         ListOfRoutes.SelectedItem = null;
-        
+
     }
 
     private async void ListOfRoutes_ItemTapped(object sender, ItemTappedEventArgs e)

@@ -5,8 +5,8 @@ namespace Project2024.Views;
 public partial class MenuPage : ContentPage
 {
     public MenuPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
     }
     private void BtnService_Clicked(object sender, EventArgs e)
     {
@@ -16,6 +16,6 @@ public partial class MenuPage : ContentPage
 
     private async void BtnTrips_Clicked(object sender, EventArgs e)
     {
-       await Shell.Current.GoToAsync(nameof(UserTripsPage));
+        await Shell.Current.GoToAsync(nameof(UserTripsPage));
     }
 }

@@ -118,4 +118,6 @@
 		<framework>Blank</framework>
 	</PropertyGroup>
 
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionProject2024HideInfoBar="True" /></VisualStudio></ProjectExtensions>
+
 </Project>

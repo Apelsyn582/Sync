@@ -34,7 +34,7 @@ public partial class UserTripsPage : ContentPage
     }
 
 
-    private  void BtnActive_Clicked(object sender, EventArgs e)
+    private void BtnActive_Clicked(object sender, EventArgs e)
     {
         ListOfOwnRoutes.IsVisible = false;
         ListOfActiveRoutes.IsVisible = true;
@@ -51,9 +51,7 @@ public partial class UserTripsPage : ContentPage
     }
     private void BtnCancelMyTrip_Clicked(object sender, EventArgs e)
     {
-        var routeToRemove = (sender as ImageButton)?.BindingContext as Route;
-
-        if (routeToRemove != null)
+        if (sender is ImageButton { BindingContext: Route routeToRemove })
         {
             UserRoute.RemoveMyRoute(routeToRemove);
 
@@ -65,9 +63,7 @@ public partial class UserTripsPage : ContentPage
 
     private void BtnCompleteTrip_Clicked(object sender, EventArgs e)
     {
-        var routeToRemove = (sender as ImageButton)?.BindingContext as Route;
-
-        if (routeToRemove != null)
+        if (sender is ImageButton { BindingContext: Route routeToRemove })
         {
             UserRoute.RemoveMyRoute(routeToRemove);
 
@@ -102,9 +98,7 @@ public partial class UserTripsPage : ContentPage
 
     private void BtnDisconnect_Clicked(object sender, EventArgs e)
     {
-        var routeToDisconnect = (sender as ImageButton)?.BindingContext as Route;
-
-        if(routeToDisconnect != null)
+        if (sender is ImageButton { BindingContext: Route routeToDisconnect })
         {
             RoutesRepository.RemoveFellowTraveler(routeToDisconnect.Owner.Name, UserRepository.GetUserByPhone(UserRoute.GetOwner().Phone));
         }

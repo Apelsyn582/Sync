@@ -6,36 +6,7 @@ namespace Project2024.Server
     {
         public static List<Route> routes = new()
         {
-            new()
-            {
-                StartPin = new(49.836910, 24.001949),
-                EndPin = new(49.864880, 24.053089),
-                Time = "16:15",
-                Date = "20.05",
-                Transport = "Taxi",
-                Owner = new() { Name = "Юра", Phone = "+380676680971"},
-                fellow_travelers = new()
-                {
-                    new(){Name = "Іванка", Phone = "+380676686593"},
-                    new(){Name = "Наталя", Phone = "+380098696740"},
-                    new(){Name = "Олег", Phone = "+380674356565"},
-                }
-            },
-            new()
-            {
-                StartPin = new(49.836910, 24.001949),
-                EndPin = new(49.864880, 24.053089),
-                Time = "19:45",
-                Date = "20.05",
-                Transport = "Taxi",
-                Owner = new() { Name = "Марина", Phone = "+380676909631"},
-                fellow_travelers = new()
-                {
-                    new(){Name = "Володя", Phone = "+380676686593", Password = "1234"},
-                    new(){Name = "Віка", Phone = "+380098696740", Password = "1234"},
-                    new(){Name = "Любомир", Phone = "+380674356565", Password = "1234"},
-                }
-            },
+            
         };
 
         public static List<User> GetFellowTravelers(string owner_name)
@@ -50,7 +21,7 @@ namespace Project2024.Server
             return null;
         }
         public static Route GetRouteByOwnerName(string name)
-        { 
+        {
             foreach (var route in routes)
             {
                 if (route.Owner.Name == name)
@@ -84,7 +55,7 @@ namespace Project2024.Server
         }
         public static void AddRoute(Route route)
         {
-            routes.Add(route); 
+            routes.Add(route);
         }
 
         public static void AddFellowTraveler(string owner_name, User user)
@@ -117,7 +88,7 @@ namespace Project2024.Server
                     routes.Remove(routes[i]);
                 }
             }
-            
+
         }
 
     }

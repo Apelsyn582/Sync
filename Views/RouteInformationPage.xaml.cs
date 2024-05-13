@@ -7,9 +7,9 @@ public partial class RouteInformationPage : ContentPage
 {
     private Route route;
 
-	public RouteInformationPage()
-	{
-		InitializeComponent();
+    public RouteInformationPage()
+    {
+        InitializeComponent();
 
     }
 
@@ -26,11 +26,14 @@ public partial class RouteInformationPage : ContentPage
         {
             route = RoutesRepository.GetRouteByOwnerName(value);
 
-            BtnTime.Text = route.Date + " " + route.Time;
+            if(route != null) 
+            {
+                BtnTime.Text = route.Date + " " + route.Time;
 
-            BtnInformation.Text = route.Transport;
+                BtnInformation.Text = route.Transport;
 
-            BtnOwner.Text = route.Owner.Name + " - " + route.Owner.Phone;
+                BtnOwner.Text = route.Owner.Name + " - " + route.Owner.Phone;
+            }           
         }
         get
         {
@@ -65,6 +68,6 @@ public partial class RouteInformationPage : ContentPage
         Shell.Current.GoToAsync($"//{nameof(MainPage)}");
     }
 
-    
+
 }
 

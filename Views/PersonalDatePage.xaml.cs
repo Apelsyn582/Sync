@@ -7,8 +7,8 @@ public partial class PersonalDatePage : ContentPage
 {
 
     public PersonalDatePage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
         NameEntry.Text = UserRoute.GetOwner().Name;
 
@@ -20,12 +20,12 @@ public partial class PersonalDatePage : ContentPage
 
     private void BtnDelete_Clicked(object sender, EventArgs e)
     {
-        
+
     }
 
     private void BtnSave_Clicked(object sender, EventArgs e)
     {
-        if(!string.IsNullOrEmpty(NameEntry.Text))
+        if (!string.IsNullOrEmpty(NameEntry.Text))
         {
             if (UserRepository.IfNameIsBooked(NameEntry.Text))
             {
@@ -44,6 +44,6 @@ public partial class PersonalDatePage : ContentPage
         {
             DisplayAlert("Помилка", "Введіть ім'я", "OK");
         }
-        
+
     }
 }

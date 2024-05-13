@@ -1,9 +1,4 @@
 ﻿using Project2024.Server;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project2024.LocalBase
 {
@@ -18,40 +13,7 @@ namespace Project2024.LocalBase
         private static User Owner = new();
         private static List<Route> MyRoutes = new List<Route>();
         private static List<Route> ActiveRoutes = new List<Route>();
-            
-        private static List<Route> LastRoutes = new List<Route>()
-        {
-            new()
-            {
-                StartPin = new(49.836910, 24.001949),
-                EndPin = new(49.864880, 24.053089),
-                Time = "7:00",
-                Date = "08.05",
-                Transport = "Taxi",
-                Owner = new() { Name = "Василь", Phone = "+380670680971"},
-                fellow_travelers = new()
-                {
-                    new(){Name = "Іванка", Phone = "+380676686593"},
-                    new(){Name = "Наталя", Phone = "+380098696740"},
-                    new(){Name = "Олег", Phone = "+380674356565"},
-                }
-            },
-            new()
-            {
-                StartPin = new(49.836910, 24.001949),
-                EndPin = new(49.864880, 24.053089),
-                Time = "17:15",
-                Date = "16.04",
-                Transport = "Taxi",
-                Owner = new() { Name = "Іра", Phone = "+380676909631"},
-                fellow_travelers = new()
-                {
-                    new(){Name = "Іванка", Phone = "+380676686593", Password = "1234"},
-                    new(){Name = "Наталя", Phone = "+380098696740", Password = "1234"},
-                    new(){Name = "Олег", Phone = "+380674356565", Password = "1234"},
-                }
-            },
-        };
+        private static List<Route> LastRoutes = new List<Route>();
 
         public static _Pin GetStartPin()
         {
@@ -63,7 +25,7 @@ namespace Project2024.LocalBase
             return EndPin;
         }
 
-        public static string GetTime() 
+        public static string GetTime()
         {
             return Time;
         }
