@@ -20,6 +20,12 @@
     <MauiXaml Update="Views\PersonalDatePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\SimilarRoutesPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

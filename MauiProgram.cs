@@ -20,6 +20,8 @@ public static class MauiProgram
         builder.Services.AddTransient<MenuPage>();
         builder.Services.AddTransient<LogInPage>();
         builder.Services.AddTransient<SimilarRoutesPage>();
+        builder.Services.AddTransient<ProfilePage>();
+        builder.Services.AddTransient<SettingsPage>();
         builder.Services.AddTransient<PersonalDatePage>();
         builder.Services.AddTransient<RouteInformationPage>();
         builder.Services.AddTransient<UserTripsPage>();

@@ -57,10 +57,12 @@
 	  <None Remove="Resources\Images\btn_service.png" />
 	  <None Remove="Resources\Images\burger.jpg" />
 	  <None Remove="Resources\Images\cancel.png" />
+	  <None Remove="Resources\Images\chenge_password.png" />
 	  <None Remove="Resources\Images\complete.png" />
 	  <None Remove="Resources\Images\create_route.png" />
 	  <None Remove="Resources\Images\criss_cross.png" />
 	  <None Remove="Resources\Images\delete_pin.png" />
+	  <None Remove="Resources\Images\dellete_account.png" />
 	  <None Remove="Resources\Images\disconnect.png" />
 	  <None Remove="Resources\Images\fellow_travelers.png" />
 	  <None Remove="Resources\Images\follow.png" />
@@ -69,9 +71,13 @@
 	  <None Remove="Resources\Images\information.png" />
 	  <None Remove="Resources\Images\join_to_route.png" />
 	  <None Remove="Resources\Images\line.png" />
+	  <None Remove="Resources\Images\personal_date.png" />
 	  <None Remove="Resources\Images\profil.png" />
+	  <None Remove="Resources\Images\profile.png" />
+	  <None Remove="Resources\Images\profile_img.png" />
 	  <None Remove="Resources\Images\save_personal_information.png" />
 	  <None Remove="Resources\Images\save_route.png" />
+	  <None Remove="Resources\Images\settings.png" />
 	  <None Remove="Resources\Images\sign_in.png" />
 	  <None Remove="Resources\Images\sign_up.png" />
 	  <None Remove="Resources\Images\start.png" />
@@ -97,7 +103,13 @@
 	  <MauiXaml Update="Views\PersonalDatePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\RouteInformationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SimilarRoutesPage.xaml">
