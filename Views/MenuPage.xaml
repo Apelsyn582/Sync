@@ -9,7 +9,7 @@
         <ImageButton
             Grid.Row="0"
             x:Name="BtnProfile"
-            
+            Clicked="BtnProfile_Clicked"
             Source="profil.png"
             VerticalOptions="Start"
             HorizontalOptions="Start"

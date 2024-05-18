@@ -10,12 +10,16 @@ public partial class MenuPage : ContentPage
     }
     private void BtnService_Clicked(object sender, EventArgs e)
     {
-        AuthService.LogOut();
-        System.Environment.Exit(0);
+        
     }
 
     private async void BtnTrips_Clicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(UserTripsPage));
+    }
+
+    private async void BtnProfile_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(ProfilePage));
     }
 }
