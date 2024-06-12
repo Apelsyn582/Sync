@@ -1,4 +1,4 @@
 # Project2024
-Проект "Sync" - це мобільний додаток, призначений для ефективного організації поїздок за допомогою таксі з метою економії коштів, часу та ресурсів.
+"Sync" is a mobile application designed to efficiently organize trips by taxi in order to save money, time and resources.
 
-Основним функціоналом додатку є можливість користувачів знаходити співмандрівників для поїздок в одному напрямку. Користувачі можуть створювати поїздки або приєднуватися до вже існуючих.  Це допоможе скоротити витрати на проїзд, зробити поїздки більш економічними та зменшити навантаження на дороги.
+The main functionality of the application is the ability of users to find fellow travelers for trips in the same direction. Users can create trips or join existing ones. This will help reduce travel costs, make trips more economical and reduce the load on roads.
